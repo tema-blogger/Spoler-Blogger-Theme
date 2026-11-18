@@ -19,6 +19,10 @@
 - Font Inter dengan fallback sistem. Tanpa pustaka JavaScript pihak ketiga pada situs publik.
 - Gratis, tanpa aktivasi domain atau purchase key.
 
+## Dukung developer
+
+Jika tema ini bermanfaat, beri ⭐ Star pada [repositori ini](https://github.com/tema-blogger/Spoler-Blogger-Theme) dan bagikan tautannya kepada pengguna Blogger lain. Dukungan Anda membantu pengembangan tema gratis. Terima kasih sudah menghargai karya developer; semoga bermanfaat dan membawa berkah.
+
 ## Pasang
 
 1. Unduh paket rilis, lalu ekstrak **Spoler-v1.0.2.xml**.
