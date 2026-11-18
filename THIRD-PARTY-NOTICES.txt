@@ -1,4 +1,4 @@
-Spoler v1.0.0 — TemaBlogger
+Spoler v1.0.1 — TemaBlogger
 
 Theme-specific code: MIT, see LICENSE.
 Native Blogger tags and widget includables are used for compatibility with Blogger.

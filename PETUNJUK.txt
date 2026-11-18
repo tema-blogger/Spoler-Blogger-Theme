@@ -1,8 +1,8 @@
-SPOLER v1.0.0 — TEMPLATE BLOGGER GRATIS
+SPOLER v1.0.1 — TEMPLATE BLOGGER GRATIS
 
 PEMASANGAN
 1. Cadangkan tema lama: Blogger > Tema > menu tindakan > Cadangan.
-2. Ekstrak ZIP, pilih Spoler-v1.0.0.xml.
+2. Ekstrak ZIP, pilih Spoler-v1.0.1.xml.
 3. Blogger > Tema > Pulihkan > Upload file XML.
 4. Periksa beranda, artikel, menu ponsel, pencarian dan komentar.
 
