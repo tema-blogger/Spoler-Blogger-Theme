@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.2 — 18 November 2026
+
+- Menambahkan kredit Tema Blogger Free di footer global, dengan tautan ke TemaBlogger.
+
 ## 1.0.1 — 18 November 2026
 
 - Memperbaiki fallback gambar ketika beranda memakai label tertentu dan daftar postingan berbeda dari daftar native Blogger.

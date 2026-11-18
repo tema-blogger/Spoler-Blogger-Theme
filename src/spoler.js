@@ -1,4 +1,4 @@
-/* Spoler v1.0.1 */
+/* Spoler v1.0.2 */
 (()=>{'use strict';if(window.__saeInsightReady)return;window.__saeInsightReady=true;
 const $=(s,r=document)=>r.querySelector(s),all=(s,r=document)=>Array.from(r.querySelectorAll(s));
 const safe=v=>{try{const u=new URL(v,location.origin);return /^https?:$/.test(u.protocol)?u.href:''}catch{return ''}};

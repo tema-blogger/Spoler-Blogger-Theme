@@ -1,8 +1,8 @@
 # Spoler Blogger Theme
 
-**Spoler v1.0.1** adalah template Blogger gratis untuk blog dan magazine, dibuat dan dipelihara oleh [TemaBlogger](https://www.temablogger.com/).
+**Spoler v1.0.2** adalah template Blogger gratis untuk blog dan magazine, dibuat dan dipelihara oleh [TemaBlogger](https://www.temablogger.com/).
 
-[Demo](https://www.landingkilat.com/) · [Unduh ZIP](https://github.com/tema-blogger/Spoler-Blogger-Theme/releases/download/v1.0.1/Spoler-v1.0.1.zip) · [Halaman produk](https://www.temablogger.com/2026/11/spoler-template-blogger-gratis.html)
+[Demo](https://www.landingkilat.com/) · [Unduh ZIP](https://github.com/tema-blogger/Spoler-Blogger-Theme/releases/download/v1.0.2/Spoler-v1.0.2.zip) · [Halaman produk](https://www.temablogger.com/2026/11/spoler-template-blogger-gratis.html)
 
 ![Spoler — headline satu besar dan dua kecil](preview-desktop.jpg)
 
@@ -13,7 +13,7 @@
 - Ikon dan jumlah komentar dari Blogger, serta tautan menuju bagian komentar.
 - Menu berbagi WhatsApp, Facebook, X, Telegram, LinkedIn dan salin tautan.
 - Komentar native Blogger, menu ponsel, dan indeks berita dengan filter tanggal/topik.
-- Footer ringkas berwarna gelap di seluruh halaman.
+- Footer ringkas berwarna gelap di seluruh halaman, dengan kredit Tema Blogger Free.
 - Header/logo dan menu melalui gadget native Blogger; label dan jumlah artikel beranda dapat diatur.
 - Gambar headline diprioritaskan, ukuran gambar responsif, serta feed di bawah layar ditunda.
 - Font Inter dengan fallback sistem. Tanpa pustaka JavaScript pihak ketiga pada situs publik.
@@ -21,7 +21,7 @@
 
 ## Pasang
 
-1. Unduh paket rilis, lalu ekstrak **Spoler-v1.0.1.xml**.
+1. Unduh paket rilis, lalu ekstrak **Spoler-v1.0.2.xml**.
 2. Cadangkan tema Anda melalui Blogger → Tema → Cadangan.
 3. Pilih Tema → Pulihkan → Upload, lalu unggah XML.
 4. Atur logo, menu, label dan jumlah artikel melalui Tata Letak.
