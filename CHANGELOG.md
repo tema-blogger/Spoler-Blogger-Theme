@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.0.3 — 2026-11-18
+
+- Pembaruan minor.
+- Pengaturan Tata Letak dan nilai warna dapat dipertahankan saat memperbarui dari cadangan XML dengan alat pembaruan Free.
+
+
 ## 1.0.2 — 18 November 2026
 
 - Menambahkan kredit Tema Blogger Free di footer global, dengan tautan ke TemaBlogger.

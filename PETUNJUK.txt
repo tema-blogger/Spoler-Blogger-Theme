@@ -1,8 +1,8 @@
-SPOLER v1.0.2 — TEMPLATE BLOGGER GRATIS
+SPOLER v1.0.3 — TEMPLATE BLOGGER GRATIS
 
 PEMASANGAN
 1. Cadangkan tema lama: Blogger > Tema > menu tindakan > Cadangan.
-2. Ekstrak ZIP, pilih Spoler-v1.0.2.xml.
+2. Ekstrak ZIP, pilih Spoler-v1.0.3.xml.
 3. Blogger > Tema > Pulihkan > Upload file XML.
 4. Periksa beranda, artikel, menu ponsel, pencarian dan komentar.
 
@@ -38,3 +38,5 @@ Periksa LICENSE dan THIRD-PARTY-NOTICES.txt sebelum membagikan ulang.
 
 KREDIT
 Footer bawaan menampilkan Tema Blogger Free dengan tautan ke https://www.temablogger.com/.
+
+Pembaruan Free: cadangkan XML tema yang terpasang. Jalankan python UPDATE-FREE.py backup.xml Spoler-v1.0.3.xml hasil-update.xml, lalu unggah hasil-update.xml. Simpan cadangan asli.
