@@ -1,0 +1,20 @@
+Spoler v1.0.0 — TemaBlogger
+
+Theme-specific code: MIT, see LICENSE.
+Native Blogger tags and widget includables are used for compatibility with Blogger.
+
+Material Design Icons by Pictogrammers / Templarian, v7.4.47.
+Embedded archive and social icon paths: Apache License 2.0.
+Icons: calendar-month-outline, filter-variant, newspaper-variant-outline,
+chevron-right, chevron-down, instagram, linkedin, twitter, facebook,
+youtube, whatsapp, arrow-left, arrow-right.
+https://github.com/Templarian/MaterialDesign-SVG/tree/v7.4.47
+See LICENSE-APACHE-2.0.txt.
+
+Inter is loaded from Google Fonts (not bundled).
+Inter: Rasmus Andersson, SIL Open Font License 1.1.
+https://github.com/rsms/inter/blob/master/LICENSE.txt
+
+No Untitled UI PRO source package, logos, or React components are included.
+Post text and cover photos in preview screenshots belong to the demo content,
+are not sample articles bundled with the XML, and are not covered by the code license.

@@ -1,0 +1,944 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html b:css='false' b:js='false' b:defaultwidgetversion='2' b:layoutsVersion='3' b:responsive='true' b:version='2' expr:lang='data:blog.locale' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+<!-- Spoler v1.0.0 | TemaBlogger | Spoler Blogger Theme | 2026-11-18 -->
+<head><meta content='width=device-width, initial-scale=1' name='viewport'/><b:include data='blog' name='all-head-content'/><title><data:blog.pageTitle/></title><b:if cond='data:blog.metaDescription'><meta expr:content='data:blog.metaDescription' name='description'/></b:if><link href='https://fonts.googleapis.com' rel='preconnect'/><link crossorigin='anonymous' href='https://fonts.gstatic.com' rel='preconnect'/><link href='https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap' media='print' onload='this.media=&quot;all&quot;' rel='stylesheet'/><noscript><link href='https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap' rel='stylesheet'/></noscript>
+<b:skin><![CDATA[/*
+<Variable name="brand.color" description="Warna utama" type="color" default="#6941c6" value="#6941c6"/>
+<Variable name="text.color" description="Warna teks" type="color" default="#101828" value="#101828"/>
+<Variable name="body.background" description="Latar halaman" type="color" default="#ffffff" value="#ffffff"/>
+*/
+:root{--brand:$(brand.color);--ink:$(text.color);--paper:$(body.background);--accent:#7f56d9;--brand-text:#6941c6;--heading:#181d27;--muted:#535862;--line:#e9eaeb;--tbni-accent:var(--accent);--tbni-ink:var(--heading)}*{box-sizing:border-box}html{scroll-behavior:auto}body{margin:0;background:var(--paper);font:16px/1.5 Inter,Arial,sans-serif;color:var(--heading)}button,input,select,textarea{font:inherit}a{color:inherit;text-decoration:none}button{cursor:pointer}button,input{border-radius:8px}button{color:inherit}img{display:block;max-width:100%;height:auto}svg{vertical-align:middle;flex-shrink:0}h1,h2,h3,h4,p,figure,blockquote,dl,dd{margin:0}h1,h2,h3,h4{font-weight:600}ul{list-style:none;margin:0;padding:0}[hidden]{display:none!important}a,button,input{-webkit-tap-highlight-color:transparent}a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid #b692f6;outline-offset:4px}::selection{background:#e9d7fe}.wrap{max-width:1280px;width:100%;margin:0 auto;padding:0 32px}.btn{display:inline-flex;justify-content:center;align-items:center;gap:8px;min-height:44px;padding:10px 16px;border:1px solid #d5d7da;border-radius:8px;background:white;font-weight:600;font-size:16px;line-height:24px;box-shadow:0 1px 2px #0a0d120d,inset 0 0 0 1px #0a0d1205}.btn.primary{color:white;background:var(--accent);border-color:#ffffff1f;box-shadow:inset 0 -2px 0 #0a0d121f,0 1px 2px #0a0d120d}.btn:hover{background:#fafafa}.btn.primary:hover{background:#6941c6}.btn.small{min-height:36px;padding:8px 12px;font-size:14px;line-height:20px}.btn:disabled{opacity:.45;cursor:default}.icon{width:20px;height:20px}.icon-btn{border:0;background:none;display:grid;place-items:center;width:40px;height:40px;padding:8px}.skip{position:absolute;top:-100px;z-index:1000;background:white;padding:12px}.skip:focus{top:8px}.theme-config,.feed-config,.legacy-settings{display:none}.announcement{color:white;background:#6941c6;position:relative;padding:14px 52px;text-align:center;font-size:16px;line-height:24px}.announcement a{color:#e9d7fe;text-decoration:underline;text-underline-offset:4px}.announcement strong{font-weight:600}.announcement .icon-btn{position:absolute;right:8px;top:6px;color:#d6bbfb}.site-header{position:relative;height:72px;z-index:30;background:white}.header-inner{display:flex;align-items:center;height:100%;gap:32px}.brand{display:inline-flex;align-items:center;gap:8px;font-size:20px;font-weight:700;letter-spacing:-.5px;white-space:nowrap;line-height:1.2}.brand-mark{display:inline-block;width:32px;height:32px;border-radius:8px;position:relative;background:linear-gradient(155deg,#fff,#f4f4f5 55%,#d4d4d8);box-shadow:0 1px 3px #0003,inset 0 0 0 1px #e4e4e7;flex-shrink:0}.brand-mark:before{content:'';position:absolute;width:17px;height:17px;left:8px;top:7px;border-radius:50%;background:linear-gradient(#b692f6,#6941c6 48%,#d6bbfb 52%,#f4ebff);box-shadow:0 0 5px #7f56d955}.brand-logo{max-width:180px;max-height:36px;object-fit:contain;width:auto}.site-nav{flex:1}.site-nav ul{display:flex;gap:20px;align-items:center}.site-nav a{font-size:14px;line-height:20px;font-weight:600;color:#414651}.site-nav a:hover{color:var(--brand-text)}.header-tools{display:flex;gap:12px;margin-left:auto}.menu-toggle{display:none}.mobile-extra,.mobile-actions{display:none}.home-hero{text-align:center;padding:96px 0}.eyebrow{color:var(--brand-text);font-size:16px;line-height:24px;font-weight:600;display:block;margin-bottom:16px}.home-hero h1{font-size:48px;line-height:60px;letter-spacing:-.02em}.home-hero .lede{font-size:20px;line-height:30px;color:var(--muted);margin:24px auto 0}.newsletter-form{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:start;gap:16px;max-width:480px;margin:56px auto 0;text-align:left}.email-field input{display:block;width:100%;border:1px solid #d5d7da;box-shadow:0 1px 2px #0a0d120d;height:48px;padding:12px 14px;background:transparent;color:inherit}.email-field p{font-size:14px;line-height:20px;color:var(--muted);margin-top:6px}.email-field a{text-decoration:underline;text-underline-offset:3px}.newsletter-form .btn{min-height:48px}.form-status{grid-column:1/-1;font-size:14px;line-height:20px;color:var(--brand-text)}.form-status:empty{display:none}.blog-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:48px 32px}.blog-card{min-width:0}.card-photo{display:block;overflow:hidden;border-radius:16px;background:#f4f3ff;aspect-ratio:1.5}.card-photo img{width:100%;height:100%;object-fit:cover}.card-copy{margin-top:20px}.card-meta{font-size:14px;line-height:20px;font-weight:600;color:var(--brand-text)}.card-title{font-size:24px;line-height:32px;margin-top:8px;display:flex;justify-content:space-between;gap:16px}.card-title svg{width:24px;height:24px;margin-top:3px}.card-title a{flex:1}.card-excerpt{color:var(--muted);font-size:16px;line-height:24px;margin-top:8px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}.tag{display:inline-flex;align-items:center;border:1px solid #e9d7fe;color:#6941c6;background:#f9f5ff;padding:1px 9px;border-radius:20px;font-size:14px;line-height:20px;font-weight:500}.tag:nth-child(2){background:#eef4ff;color:#3538cd;border-color:#c7d7fe}.tag:nth-child(3){background:#fdf2fa;color:#c11574;border-color:#fcceee}.home-page .blog-list>.blog-card:first-child{grid-column:1/-1}.home-page .blog-list>.blog-card:first-child .card-copy{margin-top:16px}.home-page .blog-list>.blog-card:first-child .card-title{font-size:30px;line-height:38px}.pagination{margin-top:64px;border-top:1px solid var(--line);padding-top:20px;display:flex;align-items:center;justify-content:space-between;gap:16px;font-size:14px;font-weight:500}.page-numbers{display:flex;gap:2px}.page-numbers a,.page-numbers span{display:grid;place-items:center;width:40px;height:40px;border-radius:8px}.page-numbers .current{background:#fafafa;color:#181d27}.pagination .btn{font-size:14px;min-height:36px;padding:8px 12px}.empty{padding:60px 24px;background:#fafafa;text-align:center;border:1px solid var(--line);border-radius:12px}.empty h2{font-size:30px;line-height:38px}.empty p{margin:16px 0 24px;color:var(--muted)}.latest-section{padding:96px 0}.section-heading{display:flex;justify-content:space-between;align-items:flex-start;gap:32px;margin-bottom:64px}.section-heading h2{font-size:36px;line-height:44px;letter-spacing:-.02em}.section-heading p{font-size:20px;line-height:30px;margin-top:20px;color:var(--muted)}.section-heading .btn{flex-shrink:0}.carousel-track{display:flex;gap:32px;overflow:auto;scroll-snap-type:x mandatory;scrollbar-width:none}.carousel-track::-webkit-scrollbar{display:none}.carousel-track>.blog-card{flex:0 0 calc((100% - 64px)/3);scroll-snap-align:start}.carousel-controls{display:flex;gap:16px;margin-top:32px}.round-btn{width:56px;height:56px;display:grid;place-items:center;border:1px solid #d5d7da;border-radius:50%;background:white;color:#717680}.round-btn:disabled{opacity:.4;cursor:default}.feed-status{padding:24px 0;color:var(--muted)}.cta-section{padding:0 0 96px}.cta-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}.cta-text h2{font-size:48px;line-height:60px;letter-spacing:-.02em}.cta-text>p{font-size:20px;line-height:30px;color:var(--muted);margin-top:24px}.actions{display:flex;gap:12px;margin-top:40px}.testimonial{height:720px;position:relative;background:#e4d0cb;overflow:hidden}.testimonial>img{width:100%;height:100%;object-fit:cover}.testimonial-caption{position:absolute;bottom:0;left:0;right:0;padding:32px;background:linear-gradient(transparent,#0007);backdrop-filter:blur(8px);color:white}.testimonial-caption blockquote{font-size:30px;line-height:38px;font-weight:600}.testimonial-caption strong{font-size:30px;line-height:38px;display:block;margin-top:32px}.testimonial-caption p{margin-top:16px}.testimonial-caption small{display:block;margin-top:4px}.testimonial-controls{display:flex;gap:20px;position:absolute;bottom:32px;right:32px}.testimonial-controls .round-btn{background:#fff1;color:white;border-color:#fff6}.stars{color:#fdb022;letter-spacing:2px}.site-footer{background:#53389e;color:#e9d7fe}.footer-main{padding:64px 0 48px;display:grid;grid-template-columns:320px 1fr;gap:64px}.footer-profile .brand{color:white}.footer-profile p{max-width:320px;margin-top:32px;font-size:16px;line-height:24px}.footer-columns{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:32px}.footer-column h3{font-size:14px;line-height:20px;font-weight:600;color:#d6bbfb;margin-bottom:16px}.footer-column ul{display:flex;flex-direction:column;gap:12px}.footer-column a{font-size:14px;line-height:20px;font-weight:600}.footer-column a:hover{color:white}.footer-note{font-size:14px;margin-top:24px}.footer-bottom{border-top:1px solid #ffffff20;padding:32px 0;display:flex;justify-content:space-between;gap:24px;font-size:14px;line-height:24px;color:#d6bbfb}.social ul{display:flex;gap:24px}.social a{font-size:14px}.footer-newsletter{display:none}.footer-flat-links{display:none}.footer-legal{display:none}body .site-footer,body .site-footer{background:#0a0a0a;color:#a4a7ae}body .footer-main,body .footer-main{grid-template-columns:1fr 360px;padding:64px 0;gap:64px}body .footer-columns,body .footer-columns{display:none}body .footer-profile p,body .footer-profile p,body .footer-note,body .footer-note{display:none}body .footer-flat-links,body .footer-flat-links{display:flex;flex-wrap:wrap;gap:32px;margin-top:32px;font-size:14px;font-weight:600}body .footer-newsletter,body .footer-newsletter{display:block}.footer-newsletter h3{font-size:14px;line-height:20px;color:white;margin-bottom:16px}.footer-newsletter .newsletter-form{margin:0;gap:16px}.footer-newsletter .email-field p{display:none}.footer-newsletter input{border-color:#414651}body .footer-bottom,body .footer-bottom{color:#a4a7ae}body .footer-bottom>.social,body .footer-bottom>.social{display:none}body .footer-legal,body .footer-legal{display:flex;gap:16px}.post-intro{padding-top:96px}.post-badge{display:inline-flex;align-items:center;gap:8px;background:#f9f5ff;color:#6941c6;border:1px solid #e9d7fe;border-radius:20px;padding:4px 10px 4px 4px;font-size:12px;line-height:18px;font-weight:500}.post-badge>a{border:1px solid #e9d7fe;background:white;padding:1px 8px;border-radius:20px}.post-intro h1{font-size:48px;line-height:60px;letter-spacing:-.02em;margin-top:16px}.post-description{font-size:20px;line-height:30px;color:var(--muted);max-width:768px;margin-top:24px}.post-cover{width:100%;height:640px;object-fit:cover;margin-top:64px;background:#f4f3ff}.post-meta{display:flex;justify-content:space-between;gap:32px;margin-top:32px}.post-byline{display:flex;gap:48px}.post-byline dt{font-size:14px;line-height:20px;font-weight:600;color:var(--brand-text)}.post-byline dd{font-size:18px;line-height:28px;font-weight:500;margin-top:12px}.share-links{display:flex;align-items:flex-start;gap:12px}.share-links .btn{font-size:14px;line-height:20px;min-height:40px;padding:9px 12px;color:#535862}.share-links .social-share{width:40px;padding:8px}.article-grid{display:grid;grid-template-columns:minmax(0,720px) minmax(0,384px);gap:112px;margin-top:96px;padding-bottom:96px;align-items:start}.post-body{font-size:18px;line-height:28px;color:var(--muted);overflow-wrap:anywhere}.post-body h2{font-size:30px;line-height:38px;color:var(--heading);margin:48px 0 20px}.post-body h2:first-child{margin-top:0}.post-body h3{font-size:24px;line-height:32px;color:var(--heading);margin:48px 0 16px}.post-body p{margin:0 0 20px}.post-body img{width:100%;height:auto;margin:48px 0 16px}.post-body figure{margin:48px 0}.post-body figure img{margin:0}.post-body figcaption{font-size:14px;line-height:20px;margin-top:16px}.post-body blockquote{border-left:2px solid #7f56d9;padding:0 0 0 20px;margin:48px 0;color:#181d27;font-size:24px;line-height:32px;font-weight:500}.post-body ul,.post-body ol{padding-left:26px;list-style:disc;margin:20px 0}.post-body ol{list-style:decimal}.post-body li{margin:8px 0}.post-body a{text-decoration:underline;text-underline-offset:3px}.post-body iframe,.post-body video{max-width:100%}.post-body pre,.post-body table{overflow:auto;max-width:100%;display:block}.post-body pre{background:#fafafa;padding:20px;border-radius:8px;font-size:14px}.post-body td,.post-body th{border:1px solid var(--line);padding:8px}.post-body .separator{clear:none!important;text-align:left!important}.post-body .tr-caption-container{width:100%}.post-body .tr-caption{font-size:14px}.article-sidebar{position:sticky;top:32px}.newsletter-box{padding:32px;border:1px solid var(--line);border-radius:16px;background:#fafafa;text-align:center}.mail-icon{display:grid;place-items:center;width:56px;height:56px;background:white;border:1px solid #d5d7da;border-radius:12px;margin-bottom:32px;box-shadow:0 1px 2px #0001}.newsletter-box h2{font-size:20px;line-height:30px}.newsletter-box>p{font-size:16px;line-height:24px;color:var(--muted);margin-top:8px}.newsletter-box .newsletter-form{display:flex;flex-direction:column;margin-top:32px;gap:16px}.newsletter-box .email-field,.newsletter-box .btn{width:100%}.newsletter-box .email-field p{font-size:14px;text-align:left}.related-section{border-top:1px solid var(--line);padding:96px 0}.related-grid{display:grid;grid-template-columns:280px minmax(0,1fr);gap:96px}.related-heading h2{font-size:36px;line-height:44px;letter-spacing:-.02em}.related-heading p{font-size:20px;line-height:30px;color:var(--muted);margin-top:20px}.related-heading .btn{margin-top:32px}.related-cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px}.related-cards .card-photo{border-radius:0}.related-cards .card-title{font-size:20px;line-height:30px}.related-cards .card-title svg{width:20px}.related-cards .tags{display:none}.archive-section{padding:64px 0 96px}.archive-heading{margin-bottom:64px}.archive-heading h1{font-size:48px;line-height:60px;letter-spacing:-.02em}.archive-search{display:flex;gap:16px;margin-top:24px;max-width:560px}.archive-search input{width:100%;min-width:0;border:1px solid #d5d7da;padding:10px 14px}.static-content{max-width:768px;margin:64px auto 96px}.static-content>h1{font-size:48px;line-height:60px;margin-bottom:32px}.static-content .post-body{width:100%}.label-navigation{padding:0 32px 40px;max-width:1280px;margin:auto}.label-navigation .tag{margin:4px}.demo-label{font-size:12px;color:#717680;margin-bottom:12px}.native-empty .btn{margin-top:20px}@media(max-width:1100px){.article-grid{gap:48px;grid-template-columns:minmax(0,2fr) minmax(0,1fr)}.footer-main{grid-template-columns:240px 1fr;gap:40px}.footer-columns{gap:20px}.cta-grid{gap:48px}.related-grid{gap:48px;grid-template-columns:250px minmax(0,1fr)}}@media(max-width:1023px){.blog-list{grid-template-columns:repeat(2,minmax(0,1fr))}.carousel-track>.blog-card{flex-basis:calc((100% - 32px)/2)}.footer-main{grid-template-columns:1fr;gap:48px}.cta-text h2{font-size:36px;line-height:44px}.testimonial{height:600px}.article-grid{grid-template-columns:minmax(0,1fr);gap:48px}.article-sidebar{position:static}.newsletter-box{text-align:left}.newsletter-box .newsletter-form{max-width:none}.related-grid{grid-template-columns:1fr;gap:48px}.site-nav ul{gap:16px}.header-inner{gap:24px}.brand{font-size:18px}body .footer-main,body .footer-main{grid-template-columns:1fr 340px}}@media(max-width:767px){.wrap{padding:0 16px}.announcement{padding:16px 48px 16px 16px;text-align:left;line-height:26px}.announcement .announcement-detail{display:block}.announcement .icon-btn{top:8px;right:8px}.site-header{height:64px}.header-inner{gap:16px;justify-content:space-between}.brand{font-size:18px;letter-spacing:-.4px}.brand-logo{max-width:190px;max-height:32px}.brand-mark{width:28px;height:28px}.brand-mark:before{width:15px;height:15px;left:7px;top:6px}.header-tools{display:none}.menu-toggle{display:grid;margin-left:auto}.menu-toggle .close-icon{display:none}.menu-toggle[aria-expanded=true] .menu-icon{display:none}.menu-toggle[aria-expanded=true] .close-icon{display:block}.site-nav{display:none;position:absolute;left:0;top:64px;width:100%;background:white;box-shadow:0 8px 12px #0a0d120a;max-height:calc(100dvh - 64px);overflow:auto;padding:24px 16px;z-index:40}.site-nav.is-open{display:block}.site-nav ul{display:flex;flex-direction:column;align-items:stretch;gap:0}.site-nav li a{display:flex;padding:12px 16px;font-size:16px;line-height:24px}.mobile-extra{display:grid;grid-template-columns:1fr 1fr;gap:12px 24px;border-top:1px solid var(--line);margin-top:24px;padding:24px 16px}.mobile-extra a{font-size:16px;color:#535862}.mobile-actions{display:flex;flex-direction:column;gap:12px;margin-top:12px}.home-hero{padding:64px 0}.home-hero .eyebrow{font-size:14px;line-height:20px;margin-bottom:16px}.home-hero h1{font-size:36px;line-height:44px;letter-spacing:-.02em}.home-hero .lede{font-size:18px;line-height:28px;margin-top:16px}.newsletter-form{display:flex;flex-direction:column;gap:16px;max-width:100%;margin-top:32px}.newsletter-form .email-field,.newsletter-form .btn{width:100%}.email-field input{height:48px}.email-field p{margin-top:6px}.newsletter-form .btn{font-size:14px}.blog-list{grid-template-columns:1fr;gap:48px}.home-page .blog-list>.blog-card:nth-child(7){display:none}.card-copy{margin-top:16px}.card-title,.home-page .blog-list>.blog-card:first-child .card-title{font-size:24px;line-height:32px}.tags{margin-top:24px}.card-excerpt{-webkit-line-clamp:2}.pagination{margin-top:48px;padding-top:16px}.page-numbers a,.page-numbers span{display:none}.page-numbers .current{display:inline;width:auto;height:auto;background:none;white-space:nowrap;font-size:14px;font-weight:400}.pagination .btn{width:36px;padding:8px}.pagination .page-word{display:none}.latest-section{padding:64px 0}.section-heading{display:block;margin-bottom:48px}.section-heading h2{font-size:30px;line-height:38px}.section-heading p{font-size:18px;line-height:28px;margin-top:16px}.section-heading>.btn{display:none}.carousel-track{gap:24px}.carousel-track>.blog-card{flex-basis:100%}.carousel-controls{margin-top:32px}.round-btn{width:48px;height:48px}.cta-section{padding-bottom:64px}.cta-grid{grid-template-columns:1fr;gap:48px}.cta-text h2{font-size:30px;line-height:38px}.cta-text>p{font-size:18px;line-height:28px;margin-top:16px}.actions{flex-direction:column;gap:12px;margin-top:32px}.actions .btn{width:100%}.actions .primary{order:-1}.testimonial{height:560px}.testimonial-caption{padding:24px}.testimonial-caption blockquote{font-size:24px;line-height:32px}.testimonial-caption strong{font-size:24px;line-height:32px;margin-top:24px}.testimonial-controls{right:24px;bottom:24px;gap:12px}.testimonial-controls .round-btn{width:44px;height:44px}.footer-main{padding:48px 0;gap:48px}.footer-columns{grid-template-columns:repeat(2,minmax(0,1fr));gap:32px}.footer-profile p{margin-top:24px}.footer-column a{font-size:16px;line-height:24px}.footer-bottom{flex-direction:column-reverse;padding:32px 0;gap:24px}.social ul{gap:20px;flex-wrap:wrap}body .footer-main,body .footer-main{grid-template-columns:1fr;gap:48px;padding:48px 0}body .footer-flat-links,body .footer-flat-links{gap:24px}.footer-newsletter .newsletter-form{flex-direction:column}body .footer-bottom,body .footer-bottom{flex-direction:column}body .footer-newsletter input,body .footer-newsletter input{width:100%}.post-intro{padding-top:64px}.post-intro h1{font-size:36px;line-height:44px;letter-spacing:-.02em;margin-top:16px}.post-description{font-size:18px;line-height:28px;margin-top:16px}.post-cover{margin-top:64px;height:240px}.post-meta{margin-top:32px}.post-byline{width:100%;gap:32px}.post-byline>div{flex:1}.share-links{display:none}.post-byline dd{margin-top:12px}.article-grid{margin-top:64px;padding-bottom:64px;gap:48px}.post-body{font-size:18px;line-height:28px}.post-body h2{font-size:24px;line-height:32px;margin-top:32px}.post-body h3{font-size:20px;line-height:30px;margin-top:32px}.post-body img,.post-body figure{margin-top:32px}.post-body figure img{margin-top:0}.newsletter-box{padding:24px}.related-section{padding:64px 0}.related-grid{gap:48px}.related-heading h2{font-size:30px;line-height:38px}.related-heading p{font-size:18px;line-height:28px}.related-cards{grid-template-columns:1fr;gap:48px}.archive-section{padding:64px 0}.archive-heading h1,.static-content>h1{font-size:36px;line-height:44px}.archive-heading{margin-bottom:48px}.archive-search{gap:12px}.archive-search .btn{font-size:14px}.static-content{margin:64px 16px}.label-navigation{padding:0 16px 32px}}@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}.home-hero .eyebrow{margin-bottom:12px}.home-hero .newsletter-form{margin-top:48px}@media(max-width:767px){.announcement{line-height:25.6px}.home-hero .newsletter-form{margin-top:32px}}.archive-section:has(.tbni) .archive-heading{display:none}body:not(#layout) .section,body:not(#layout) .widget{margin:0;padding:0}body:not(#layout) .widget-content{margin:0;padding:0}body:not(#layout) .widget ul{margin:0;padding:0;list-style:none}body:not(#layout) .widget li{margin:0;padding:0}.footer-column li{line-height:20px}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}.layout-group{display:contents}.post-main,.post-sidebar{display:contents}.home-page .legacy-settings{display:none}/* TB:NEWS_INDEX:CSS:START */.tbni{--tbni-accent:var(--red,#df1529);--tbni-ink:var(--ink,#25272a);--tbni-line:#e7e8eb;color:var(--tbni-ink);margin:26px 0 40px;font-family:inherit;min-width:0}.tbni *{box-sizing:border-box}.tbni[hidden],.tbni [hidden]{display:none!important}.tbni a{color:inherit;text-decoration:none}.tbni .tbni-breadcrumb{display:flex;gap:8px;align-items:center;color:#82858c;font-size:11px;margin-bottom:18px}.tbni-breadcrumb a:hover{color:var(--tbni-accent)}.tbni .tbni-heading{font-size:36px;font-weight:800;letter-spacing:-1.1px;line-height:1.2;margin:0 0 12px}.tbni-intro{font-size:13px;line-height:1.8;color:#777b83;margin:0 0 26px;max-width:560px}.tbni-intro:before{content:"";display:block;width:42px;height:4px;background:var(--tbni-accent);margin:18px 0;border-radius:2px}.tbni .tbni-form{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr) 118px;gap:14px;align-items:end;padding:20px;background:#f7f8fa;border:1px solid #eceef1;border-radius:10px;margin:0 0 18px}.tbni-field{display:block;min-width:0;font-size:11px;font-weight:600}.tbni-field>span{display:block;margin-bottom:8px}.tbni-control{position:relative;display:flex;align-items:center;min-width:0}.tbni-control>.tbni-icon{position:absolute;left:12px;width:19px;height:19px;pointer-events:none;color:#858994}.tbni input,.tbni select,.tbni button{font-family:inherit;font-size:12px}.tbni input,.tbni select{width:100%;min-width:0;max-width:100%;height:44px;border:1px solid #dfe2e7;border-radius:6px;background:#fff;color:var(--tbni-ink);padding:0 10px 0 39px;line-height:normal}.tbni select{padding-right:25px;text-overflow:ellipsis}.tbni input[type=date]{color-scheme:light}.tbni .tbni-submit{height:44px;border:1px solid var(--tbni-accent);border-radius:6px;background:var(--tbni-accent);color:#fff;font-weight:600;display:flex;align-items:center;justify-content:center;gap:8px;cursor:pointer}.tbni-icon{display:inline-block;width:20px;height:20px;fill:currentColor;flex-shrink:0;vertical-align:middle}.tbni-channels{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;padding:1px 1px 12px;margin-bottom:12px}.tbni-channels::-webkit-scrollbar{display:none}.tbni .tbni-chip{flex-shrink:0;white-space:nowrap;border:1px solid #e3e5e9;border-radius:20px;padding:8px 14px;color:#676b73;background:#fff;cursor:pointer;font-size:11px;line-height:1.4}.tbni .tbni-chip[aria-pressed=true]{border-color:var(--tbni-accent);color:var(--tbni-accent);background:color-mix(in srgb,var(--tbni-accent) 6%,white);font-weight:600}.tbni-summary{display:flex;justify-content:space-between;gap:14px;align-items:center;border-bottom:1px solid var(--tbni-line);padding-bottom:16px;margin-bottom:24px}.tbni .tbni-count{font-weight:700;font-size:14px;margin:0 0 4px}.tbni-context{font-size:11px;line-height:1.6;color:#8a8d94;margin:0}.tbni .tbni-reset{background:none;border:0;color:var(--tbni-accent);padding:8px 0 8px 8px;min-height:40px;cursor:pointer;font-size:11px;white-space:nowrap}.tbni .tbni-day{margin-bottom:26px}.tbni .tbni-date{display:flex;align-items:center;gap:9px;font-size:14px;font-weight:700;line-height:1.5;margin:0;padding:12px 14px;background:#f5f6f8;border-left:3px solid var(--tbni-accent);border-radius:0 5px 5px 0}.tbni-date .tbni-icon{width:18px;height:18px;color:var(--tbni-accent)}.tbni .tbni-row{display:grid;grid-template-columns:58px minmax(0,1fr) 132px;gap:18px;align-items:center;padding:21px 0;border-bottom:1px solid var(--tbni-line)}.tbni-time{align-self:start;padding-top:3px;font-size:12px;font-weight:600;color:#858994;line-height:1.6;font-variant-numeric:tabular-nums}.tbni-time small{display:block;font-size:9px;font-weight:400;letter-spacing:.4px;color:#a1a4aa;margin-top:2px}.tbni-copy{min-width:0}.tbni .tbni-category{display:inline-block;color:var(--tbni-accent);font-size:10px;font-weight:600;margin:0 0 7px;line-height:1.4}.tbni .tbni-title{font-size:16px;font-weight:700;line-height:1.55;letter-spacing:-.15px;margin:0;overflow-wrap:anywhere}.tbni-title a:hover{color:var(--tbni-accent)}.tbni .tbni-photo{display:grid;place-items:center;aspect-ratio:16/10;align-self:start;overflow:hidden;border-radius:6px;background:#f0f1f4;color:#b2b5bc}.tbni-photo img{display:block;width:100%;height:100%;object-fit:cover}.tbni-photo>.tbni-icon{width:30px;height:30px}.tbni-more-area{text-align:center;padding:4px 0}.tbni-progress{color:#8a8d94;font-size:11px;line-height:1.6;margin:0 0 14px}.tbni .tbni-more,.tbni .tbni-retry{display:inline-flex;justify-content:center;align-items:center;gap:10px;border:1px solid var(--tbni-accent);border-radius:6px;min-height:44px;background:#fff;color:var(--tbni-accent);padding:10px 24px;font-size:12px;font-weight:600;cursor:pointer}.tbni button:disabled{opacity:.55;cursor:wait}.tbni button:focus-visible,.tbni input:focus-visible,.tbni select:focus-visible,.tbni a:focus-visible{outline:2px solid var(--tbni-accent);outline-offset:3px}.tbni .tbni-notice{padding:32px 20px;border:1px solid var(--tbni-line);background:#fafbfc;border-radius:8px;text-align:center;margin-bottom:22px}.tbni-notice>.tbni-icon{width:36px;height:36px;color:#afb3bd;margin-bottom:8px}.tbni .tbni-notice h2{font-size:17px;line-height:1.5;margin:0 0 8px}.tbni .tbni-notice p{font-size:12px;line-height:1.8;color:#80848d;margin:0 0 16px}.tbni .tbni-native-link{display:block;font-size:11px;color:#80848d;margin-top:14px;text-decoration:underline}.tbni-loading .tbni-ghost{height:120px;border-bottom:1px solid var(--tbni-line);background:linear-gradient(90deg,#f4f5f7 0 9%,transparent 9% 13%,#f4f5f7 13% 75%,transparent 75%);margin:0 0 12px;opacity:.7}.has-tb-news-index .tb-index-native{display:none}@media(max-width:600px){.tbni{margin-top:22px}.tbni .tbni-heading{font-size:30px;letter-spacing:-.8px}.tbni-intro{font-size:12px;margin-bottom:22px}.tbni .tbni-form{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:14px 10px;padding:16px}.tbni .tbni-submit{grid-column:1/-1}.tbni input,.tbni select{font-size:11px;padding-left:32px}.tbni-control>.tbni-icon{left:9px;width:17px;height:17px}.tbni input[type=date]{padding-right:4px}.tbni .tbni-row{grid-template-columns:39px minmax(0,1fr) 86px;gap:10px;padding:18px 0}.tbni .tbni-title{font-size:13px;line-height:1.6;letter-spacing:-.1px}.tbni-time{font-size:10px}.tbni-time small{font-size:8px}.tbni .tbni-category{font-size:9px;margin-bottom:5px}.tbni .tbni-date{font-size:12px;padding:11px 10px}.tbni .tbni-count{font-size:13px}.tbni-context{font-size:10px}.tbni .tbni-photo{border-radius:5px}}@media(max-width:360px){.tbni .tbni-row{grid-template-columns:35px minmax(0,1fr) 72px;gap:8px}.tbni .tbni-title{font-size:12px}.tbni .tbni-form{padding:12px;gap:12px 8px}.tbni input,.tbni select{padding-left:28px}.tbni-control>.tbni-icon{left:7px;width:16px;height:16px}}/* TB:NEWS_INDEX:CSS:END */.card-copy{margin-top:16px}.card-title{font-size:18px;line-height:28px}.card-excerpt{margin-top:4px}.tag{border:0;padding:2px 10px;box-shadow:inset 0 0 0 1px #e9d7fe}.tag:nth-child(2){box-shadow:inset 0 0 0 1px #c7d7fe}.tag:nth-child(3){box-shadow:inset 0 0 0 1px #fcceee}.card-title>svg{color:#a4a7ae;width:24px;height:24px;margin-top:2px}.home-page .blog-list>.blog-card:first-child .card-title{font-size:24px;line-height:32px}.home-page .blog-list>.blog-card:first-child{margin-bottom:16px}.home-page #Blog1>.wrap{padding-bottom:96px}.pagination .btn{padding:0;min-height:20px;background:none;border:0;box-shadow:none;line-height:20px}.pagination .page-numbers>a,.pagination .page-numbers>span{width:40px;height:36px;font-weight:500}.pagination .page-numbers .current{background:#fafafa}.mobile-page-count{display:none}.latest-section{background:#fafafa;overflow:hidden}.carousel-track{width:calc(100% + max(32px,(100vw - 1216px)/2));padding-right:32px}.carousel-track>.blog-card{flex:0 0 384px;max-width:384px}.latest-section .round-btn{width:56px;height:56px}.cta-section{padding:96px 0}.testimonial-caption .stars{position:absolute;right:32px;bottom:155px;color:white;font-size:20px}.testimonial-caption{padding:32px}.testimonial-controls .round-btn{width:56px;height:56px}.related-author{display:flex;align-items:center;gap:12px;margin-top:24px;font-size:14px;line-height:20px}.related-author img,.author-initial{width:40px;height:40px;object-fit:cover;border-radius:50%;flex-shrink:0}.author-initial{display:grid;place-items:center;background:#f4ebff;color:#6941c6;font-weight:600}.related-author strong{display:block;font-weight:600}.related-author time{display:block;color:#535862}.related-cards .post-badge{margin-bottom:12px}.related-cards .card-title{margin-top:0}.related-cards .card-excerpt{margin-top:4px}.post-cover-credit{font-size:12px!important;line-height:18px;text-align:left!important;color:#717680!important;margin:10px 0 0!important}.post-cover-credit a{text-decoration:underline}.social a{display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;color:#d6bbfb}.social a svg{width:24px;height:24px;fill:currentColor}.footer-note{display:flex;gap:12px;align-items:center;margin-top:32px;color:#e9d7fe;font-size:12px;line-height:16px}.footer-note .laurel{font-size:52px;line-height:56px;color:white;font-family:Georgia,serif}.footer-note strong{display:block;font-size:12px;color:white}.footer-note .stars{font-size:12px;letter-spacing:1px}@media(max-width:1023px){.home-page .blog-list>.blog-card:first-child .card-title{font-size:18px;line-height:28px}.carousel-track>.blog-card{flex-basis:384px}.cta-section{padding:64px 0}.related-cards .card-title{font-size:20px;line-height:30px}}@media(max-width:767px){.card-title,.home-page .blog-list>.blog-card:first-child .card-title{font-size:18px;line-height:28px}.home-page .blog-list>.blog-card:first-child{margin-bottom:0}.home-page #Blog1>.wrap{padding-bottom:64px}.pagination .page-numbers{display:none}.pagination .mobile-page-count{display:block;font-size:14px;font-weight:400}.pagination .btn{padding:8px 12px;min-height:36px;width:auto;border:1px solid #d5d7da;border-radius:8px;box-shadow:0 1px 2px #0a0d120d}.carousel-track{width:calc(100% + 16px);padding-right:16px}.carousel-track>.blog-card{flex-basis:320px;max-width:320px}.latest-section .round-btn{width:48px;height:48px}.testimonial-caption .stars{right:24px;bottom:150px}.testimonial-controls .round-btn{width:44px;height:44px}.footer-note{margin-top:24px}}.article-grid{column-gap:96px;justify-content:center}.article-sidebar{position:static}.newsletter-box{text-align:left}.newsletter-box>p{margin-top:4px}.newsletter-box .email-field input{height:44px}.post-byline>div:first-child{min-width:110px}.share-links .social-share svg{width:22px;height:22px;fill:currentColor}.latest-section .section-heading>.btn{background:#7f56d9;color:white;border-color:#ffffff1f;box-shadow:inset 0 -2px 0 #0a0d121f,0 1px 2px #0a0d120d}.latest-section .section-heading>.btn svg{display:none}.tag[style]{background:var(--tag-bg);color:var(--tag-color);box-shadow:inset 0 0 0 1px var(--tag-border)}.footer-note .laurel{width:24px;height:60px;display:block}.footer-note .laurel svg{display:block;width:24px;height:60px;fill:none;stroke:white;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round}.footer-note .laurel.right{transform:scaleX(-1)}.footer-note{gap:6px}@media(max-width:1100px){.article-grid{column-gap:48px}}@media(max-width:1023px){.article-grid{max-width:784px;column-gap:0}}@media(max-width:767px){.post-byline>div:first-child{min-width:0}}body{text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased}h1,h2,h3,.card-title{letter-spacing:-.025em}.home-hero{padding:72px 0 64px}.home-hero .newsletter-form{margin-top:32px}.blog-list{row-gap:48px}.blog-card{display:flex;flex-direction:column;position:relative}.card-copy{display:flex;flex-direction:column;flex:1;min-width:0}.card-title,.home-page .blog-list>.blog-card .card-title{font-size:20px;line-height:29px;font-weight:600;display:block;letter-spacing:-.025em;margin-top:10px}.card-title a{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;transition:color .15s}.card-title a:hover{color:var(--brand-text)}.card-meta{font-size:13px;line-height:20px;color:#6941c6;font-weight:500;letter-spacing:0}.card-excerpt{font-size:15px;line-height:25px;margin-top:10px}.tags{margin-top:18px;gap:6px}.tag{font-size:12px;line-height:20px;padding:1px 9px}.home-page .blog-list>.blog-card:first-child{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:36px;padding:24px;background:#faf9fc;border:1px solid #eeebf3;border-radius:24px;align-items:stretch}.home-page .blog-list>.blog-card:first-child .card-photo{height:100%;min-height:360px;aspect-ratio:auto;border-radius:16px}.home-page .blog-list>.blog-card:first-child .card-copy{margin:0;padding:16px 12px 8px 0;justify-content:center}.home-page .blog-list>.blog-card:first-child .card-title{font-size:30px;line-height:40px;margin-top:14px}.home-page .blog-list>.blog-card:first-child .card-excerpt{font-size:16px;line-height:27px;-webkit-line-clamp:3;margin-top:16px}.card-actions{display:flex;align-items:center;justify-content:space-between;gap:12px;border-top:1px solid #ececf0;padding-top:12px;margin-top:20px;font-size:12px;line-height:20px;color:#667085;min-height:49px}.card-actions .icon{width:17px;height:17px;flex-shrink:0}.comment-link,.card-share summary{display:inline-flex;align-items:center;gap:7px;min-height:32px;white-space:nowrap}.comment-link:hover,.card-share summary:hover{color:var(--brand-text)}.card-share{position:relative}.card-share summary{list-style:none;cursor:pointer;border-radius:6px;padding:0 3px}.card-share summary::-webkit-details-marker{display:none}.share-popover{position:absolute;right:0;bottom:calc(100% + 10px);width:200px;max-width:calc(100vw - 48px);background:#fff;border:1px solid #eaecf0;border-radius:14px;box-shadow:0 12px 32px #10182820;padding:8px;z-index:30;color:#344054}.share-popover p{font-size:11px;font-weight:600;color:#98a2b3;padding:7px 10px;text-transform:uppercase;letter-spacing:.06em}.share-popover a,.share-popover button{display:flex;align-items:center;gap:10px;padding:9px 10px;width:100%;border:0;background:none;font:inherit;font-size:13px;line-height:20px;text-align:left;border-radius:7px;cursor:pointer;color:inherit}.share-popover a:hover,.share-popover button:hover{background:#f9f5ff;color:#6941c6}.share-popover button{border-top:1px solid #f2f4f7;border-radius:0 0 7px 7px;margin-top:4px}.card-share summary:focus-visible,.comment-link:focus-visible{outline:2px solid #9e77ed;outline-offset:4px}.carousel-track{padding-bottom:6px}.carousel-track .blog-card,.related-cards .blog-card{height:auto}.related-cards .card-actions{margin-top:20px}.post-intro h1{max-width:1100px;font-weight:600}.post-description{line-height:32px}.article-main{min-width:0}.post-body{font-size:18px;line-height:31px;letter-spacing:-.01em;color:#475467}.post-body p{margin-bottom:24px}.post-body h2,.post-body h3{letter-spacing:-.025em}.single-article .share-links{display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:flex-end;max-width:430px}.share-label{font-size:12px;line-height:20px;font-weight:500;width:100%;color:#667085}.single-article .share-links .share-copy{font-size:12px}.single-article .share-links .social-share svg{width:18px;height:18px}.share-links .btn{border-radius:8px;background:#fff;transition:background .15s}.share-links .btn:hover{background:#f9f5ff;color:#6941c6}.post-discussion{margin-top:56px;padding-top:32px;border-top:1px solid #eaecf0;scroll-margin-top:32px}.comments{font-size:15px;line-height:25px;color:#475467;scroll-margin-top:32px}.comments h3{font-size:24px;line-height:32px;letter-spacing:-.025em;color:#181d27;margin:0 0 24px}.comments iframe{width:100%;max-width:100%;border:0}.comments .comment{margin:20px 0}.comments .comment-content{margin-top:8px}.comments .comment-actions a{font-size:12px;color:#6941c6;margin-right:16px}.comments .avatar-image-container{float:left;margin-right:12px}.comments .comment-block{margin-left:48px}.comments .datetime{font-size:12px;color:#98a2b3;margin-left:8px}.comments .comment-replies{margin-left:32px}.comments .continue{font-size:13px;color:#6941c6}@media(max-width:1023px){.home-page .blog-list>.blog-card:first-child{gap:24px;padding:20px}.home-page .blog-list>.blog-card:first-child .card-photo{min-height:300px}.home-page .blog-list>.blog-card:first-child .card-title{font-size:26px;line-height:35px}.single-article .share-links{max-width:390px}}@media(max-width:767px){.home-hero{padding:48px 0 40px}.home-hero h1{font-size:36px;line-height:44px}.home-hero .lede{font-size:18px;line-height:28px;margin-top:16px}.home-hero .newsletter-form{margin-top:28px}.home-page .blog-list>.blog-card:first-child{display:flex;padding:16px;gap:0;border-radius:20px}.home-page .blog-list>.blog-card:first-child .card-photo{height:auto;min-height:0;aspect-ratio:3/2;border-radius:12px}.home-page .blog-list>.blog-card:first-child .card-copy{padding:0;margin-top:20px}.home-page .blog-list>.blog-card:first-child .card-title{font-size:24px;line-height:33px}.home-page .blog-list>.blog-card:first-child .card-excerpt{font-size:15px;line-height:25px;-webkit-line-clamp:2;margin-top:10px}.card-title,.home-page .blog-list>.blog-card .card-title{font-size:20px;line-height:29px}.blog-list{row-gap:36px}.card-actions{margin-top:18px;padding-top:10px}.single-article .share-links{display:flex;max-width:none;width:100%;justify-content:flex-start;margin-top:8px}.single-article .post-meta{flex-wrap:wrap;gap:24px}.post-body{font-size:17px;line-height:29px}.post-description{font-size:18px;line-height:29px}.post-intro h1{font-size:32px;line-height:42px}.post-discussion{margin-top:40px;padding-top:28px}.share-label{width:100%}.share-popover{width:190px}}@media(prefers-reduced-motion:reduce){.card-title a,.share-links .btn{transition:none}}.home-page .blog-list>.blog-card:first-child .card-photo{height:420px;min-height:0;position:relative}.home-page .blog-list>.blog-card:first-child .card-photo img{position:absolute;inset:0;height:100%;width:100%;object-fit:cover}.card-copy>.tags{margin-bottom:20px}.card-copy>.card-actions{margin-top:auto}.home-page .blog-list>.blog-card:first-child .tags{margin-bottom:0}.home-page .blog-list>.blog-card:first-child .card-actions{margin-top:20px}@media(min-width:768px) and (max-width:1023px){.home-page .blog-list>.blog-card:first-child .card-photo{height:400px}}@media(max-width:767px){.home-page .blog-list>.blog-card:first-child .card-photo{height:auto;min-height:0;aspect-ratio:3/2}.card-copy>.tags{margin-bottom:18px}.home-page .blog-list>.blog-card:first-child .tags{margin-bottom:0}}@media(min-width:1024px){.home-page .blog-list{grid-template-columns:repeat(6,minmax(0,1fr));gap:32px}.home-page .blog-list>.blog-card{grid-column:span 2}.home-page .blog-list>.blog-card:first-child{grid-column:1/5;grid-row:1/3;display:flex;flex-direction:column;gap:0;padding:0;border:1px solid #eeebf3;border-radius:20px;background:#faf9fc;align-items:stretch;margin:0}.home-page .blog-list>.blog-card:first-child .card-photo{height:auto;min-height:340px;flex:1;aspect-ratio:auto;border-radius:19px 19px 0 0;position:relative}.home-page .blog-list>.blog-card:first-child .card-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.home-page .blog-list>.blog-card:first-child .card-copy{flex:0 0 auto;margin:0;padding:24px 28px;justify-content:flex-start}.home-page .blog-list>.blog-card:first-child .card-title{font-size:30px;line-height:39px;margin-top:10px}.home-page .blog-list>.blog-card:first-child .card-title a{-webkit-line-clamp:3}.home-page .blog-list>.blog-card:first-child .card-excerpt{font-size:16px;line-height:26px;margin-top:12px;-webkit-line-clamp:2}.home-page .blog-list>.blog-card:first-child .tags{margin-top:16px;margin-bottom:0}.home-page .blog-list>.blog-card:first-child .card-actions{margin-top:18px}.home-page .blog-list>.blog-card:nth-child(2){grid-column:5/7;grid-row:1}.home-page .blog-list>.blog-card:nth-child(3){grid-column:5/7;grid-row:2}.home-page .blog-list>.blog-card:nth-child(2) .card-photo,.home-page .blog-list>.blog-card:nth-child(3) .card-photo{aspect-ratio:16/7;height:auto;border-radius:14px;flex:0 0 auto}.home-page .blog-list>.blog-card:nth-child(2) .card-copy,.home-page .blog-list>.blog-card:nth-child(3) .card-copy{margin-top:12px}.home-page .blog-list>.blog-card:nth-child(2) .card-title,.home-page .blog-list>.blog-card:nth-child(3) .card-title{font-size:18px;line-height:26px;margin-top:7px}.home-page .blog-list>.blog-card:nth-child(2) .card-excerpt,.home-page .blog-list>.blog-card:nth-child(3) .card-excerpt,.home-page .blog-list>.blog-card:nth-child(2) .tags,.home-page .blog-list>.blog-card:nth-child(3) .tags{display:none}.home-page .blog-list>.blog-card:nth-child(2) .card-actions,.home-page .blog-list>.blog-card:nth-child(3) .card-actions{margin-top:12px;padding-top:9px;min-height:42px}.home-page .blog-list>.blog-card:nth-child(n+4){margin-top:12px}}@media(min-width:768px) and (max-width:1023px){.home-page .blog-list{grid-template-columns:repeat(2,minmax(0,1fr));gap:32px}.home-page .blog-list>.blog-card:first-child{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px;padding:20px}.home-page .blog-list>.blog-card:first-child .card-photo{height:100%;min-height:340px;aspect-ratio:auto}.home-page .blog-list>.blog-card:first-child .card-copy{padding:8px 0;justify-content:center}}@media(max-width:767px){.home-page .blog-list{grid-template-columns:minmax(0,1fr)}.home-page .blog-list>.blog-card:first-child{grid-column:auto;grid-row:auto}}.single-article .post-intro .post-cover{margin-top:40px}@media(max-width:767px){.single-article .post-intro .post-cover{margin-top:28px}}.home-page #compaBlog .blog-list{margin-top:48px}@media(max-width:767px){.home-page #compaBlog .blog-list{margin-top:28px}}[data-feed] .card-excerpt{min-height:50px}.home-page .blog-list>.blog-card:first-child .card-excerpt{min-height:52px}body .footer-flat-links ul{display:flex;flex-wrap:wrap;gap:32px}body .footer-legal ul{display:flex;flex-wrap:wrap;gap:16px}@media(max-width:767px){body .footer-flat-links ul{gap:24px}}]]></b:skin><b:template-skin><![CDATA[body#layout{width:auto;min-width:300px;margin:20px;background:#f7f8fc;font-family:Arial,sans-serif}body#layout .layout-group{display:block;position:relative;float:none;width:auto;height:auto;margin:16px 0;padding:16px;border:1px solid #ddd4ef;border-radius:10px;background:#fff;overflow:visible}body#layout .layout-group:before{display:block;font-size:18px;font-weight:bold;color:#6941c6;padding-bottom:14px}body#layout .group-header:before{content:'Header dan Navigasi'}body#layout .group-home:before{content:'Beranda — hero dan artikel'}body#layout .group-post:before{content:'Postingan Blog dan Newsletter Artikel'}body#layout .group-footer:before{content:'Footer — profil, tautan dan kredit'}body#layout .group-legacy:before{content:'Pengaturan tema sebelumnya — tersimpan'}body#layout .group-config:before{content:'Konfigurasi Newsletter dan Kontak'}body#layout .group-config{background:#f4ebff}body#layout .site-header,body#layout .header-inner,body#layout .site-nav,body#layout .footer-main,body#layout .footer-columns,body#layout .footer-bottom,body#layout .legacy-settings,body#layout .theme-config,body#layout .feed-config,body#layout .article-sidebar{display:block;position:relative;top:auto;left:auto;right:auto;bottom:auto;width:auto;height:auto;max-height:none;margin:0;padding:0;overflow:visible;background:none;border:0;box-shadow:none}body#layout .footer-column{display:inline-block;width:30%;min-width:180px;vertical-align:top;margin-right:2%}body#layout .section{padding:0;margin:0 0 16px;border:0;background:none}body#layout .wrap{width:auto;padding:0;margin:0}body#layout div.section .add_widget{display:none!important}body#layout .header-tools,body#layout .menu-toggle,body#layout .mobile-extra,body#layout .mobile-actions,body#layout .skip,body#layout .footer-flat-links,body#layout .footer-legal,body#layout .footer-column>h3{display:none}body#layout .post-main{display:inline-block;width:65%;min-width:300px;vertical-align:top}body#layout .post-sidebar{display:inline-block;width:32%;min-width:220px;vertical-align:top}body#layout .footer-newsletter{display:block}
+]]></b:template-skin></head><body expr:class='data:view.isHomepage ? &quot;home-page&quot; : data:view.isPost ? &quot;single-page&quot; : data:view.isPage ? &quot;static-page&quot; : &quot;archive-page&quot;'>
+<a class='skip' href='#main'>Langsung ke konten</a>
+<div class='layout-group group-config'><b:section id='compaConfiguration' name='Konfigurasi Kontak' showaddelement='yes'>
+  <b:widget id='HTML100' locked='true' title='Konfigurasi Kontak' type='HTML' version='2' visible='true'>
+    <b:widget-settings>
+      <b:widget-setting name='content'/>
+    </b:widget-settings>
+    <b:includable id='main'><div class='theme-config'><b:if cond='data:content'><data:content/><b:else/>email=
+alamat=</b:if></div></b:includable>
+  </b:widget>
+</b:section><b:section id='insightNewsletterConfig' name='Pengaturan Newsletter' showaddelement='yes'>
+<b:widget id='HTML200' locked='true' title='Pengaturan Newsletter' type='HTML' version='2' visible='true'>
+  <b:widget-settings>
+    <b:widget-setting name='content'/>
+  </b:widget-settings>
+  <b:includable id='main'><div class='theme-config'><b:if cond='data:content'><data:content/><b:else/><div class='theme-config'>newsletter_url=
+newsletter_field=email</div></b:if></div></b:includable>
+</b:widget>
+</b:section></div><b:section id='insightAnnouncement' name='Banner Pengumuman' showaddelement='yes'>
+<b:widget id='HTML201' locked='true' title='Banner Pengumuman' type='HTML' version='2' visible='true'>
+  <b:widget-settings>
+    <b:widget-setting name='content'/>
+  </b:widget-settings>
+  <b:includable id='main'><b:if cond='data:content'><data:content/></b:if></b:includable>
+</b:widget>
+</b:section>
+<div class='layout-group group-header'><header class='site-header'><div class='wrap header-inner'><b:section id='compaHeader' name='Header dan Logo' showaddelement='yes'>
+  <b:widget id='Header1' locked='true' title='Spoler (Header)' type='Header' version='2' visible='true'>
+    <b:widget-settings>
+      <b:widget-setting name='displayUrl'/>
+      <b:widget-setting name='displayHeight'>0</b:widget-setting>
+      <b:widget-setting name='sectionWidth'>-1</b:widget-setting>
+      <b:widget-setting name='useImage'>false</b:widget-setting>
+      <b:widget-setting name='shrinkToFit'>false</b:widget-setting>
+      <b:widget-setting name='imagePlacement'>BEHIND</b:widget-setting>
+      <b:widget-setting name='displayWidth'>0</b:widget-setting>
+    </b:widget-settings>
+    <b:includable id='main'><a class='brand' expr:href='data:blog.homepageUrl'><b:if cond='data:image'><img class='brand-logo' expr:alt='data:blog.title' expr:src='data:image'/><b:else/><span aria-hidden='true' class='brand-mark'></span><span><data:blog.title/></span></b:if></a></b:includable>
+    <b:includable id='behindImageStyle'>
+    <b:if cond='data:sourceUrl'>
+      <b:include cond='data:this.image' data='{                    image: data:this.image,                    selector: &quot;.header-widget&quot;                  }' name='responsiveImageStyle'/>
+      <b:with value='data:shrinkToFit ? &quot;100%&quot; : &quot;cover&quot;' var='backgroundSize'>
+      <style type='text/css'>
+        .header-widget {
+          background-position: <data:blog.locale.languageAlignment/>;
+          background-repeat: no-repeat;
+          background-size: <data:backgroundSize/>;
+        }
+      </style>
+      </b:with>
+    </b:if>
+  </b:includable>
+    <b:includable id='description'>
+    <p>
+      <data:this.description/>
+    </p>
+  </b:includable>
+    <b:includable id='image'>
+    <a class='header-image-wrapper' expr:href='data:blog.homepageUrl'>
+      <b:with value='data:shrinkToFit ? &quot;header-widget-img-shrink-to-fit&quot;: &quot;&quot;' var='imageClass'>
+      <b:include data='{                                                 image: data:image,                                                 imageClass: data:imageClass,                                                 altText: data:blog.title.escaped,                                                 originalWidth: data:width,                                                 originalHeight: data:height                                               }' name='responsiveImage'/>
+      </b:with>
+    </a>
+  </b:includable>
+    <b:includable id='shrinkToFitStyle'>
+    <style type='text/css'>
+      .header-widget-img-shrink-to-fit {
+        max-width: 100%;
+        height: auto;
+        object-fit: scale-down;
+      }
+    </style>
+  </b:includable>
+    <b:includable id='title'>
+    <h1>
+      <b:tag cond='data:view.url != data:blog.homepageUrl' expr:href='data:blog.homepageUrl' name='a'>
+        <data:title/>
+      </b:tag>
+    </h1>
+  </b:includable>
+  </b:widget>
+</b:section><nav aria-label='Menu utama' class='site-nav' id='mainNav'><b:section id='compaMenu' name='Menu Utama' showaddelement='yes'>
+  <b:widget id='LinkList1' locked='true' title='Menu Utama' type='LinkList' version='2' visible='true'>
+    <b:widget-settings><b:widget-setting name='sorting'>NONE</b:widget-setting><b:widget-setting name='text-0'>Beranda</b:widget-setting><b:widget-setting name='link-0'>/</b:widget-setting><b:widget-setting name='text-1'>Blog</b:widget-setting><b:widget-setting name='link-1'>/search?max-results=7</b:widget-setting><b:widget-setting name='text-2'>Indeks Berita</b:widget-setting><b:widget-setting name='link-2'>/search?view=index</b:widget-setting><b:widget-setting name='text-3'>Tentang</b:widget-setting><b:widget-setting name='link-3'>/p/tentang.html</b:widget-setting><b:widget-setting name='text-4'>Kontak</b:widget-setting><b:widget-setting name='link-4'>/p/kontak.html</b:widget-setting></b:widget-settings>
+    <b:includable id='main'><ul><b:loop values='data:links' var='link'><li><a expr:href='data:link.target'><data:link.name/></a></li></b:loop></ul></b:includable>
+    <b:includable id='content'>
+ <div class='widget-content'>
+   <ul>
+     <b:loop values='data:links' var='link'>
+       <li><a expr:href='data:link.target'><data:link.name/></a></li>
+     </b:loop>
+   </ul>
+ </div>
+</b:includable>
+  </b:widget>
+</b:section><div class='mobile-extra'><a href='/p/tentang.html'>Tentang kami</a><a href='/p/kontak.html'>Kontak</a><a href='/p/layanan.html'>Layanan</a><a href='/search?view=index'>Indeks Berita</a><a href='/p/portofolio.html'>Portofolio</a><a href='/p/privasi.html'>Privasi</a></div><div class='mobile-actions'><a class='btn primary' href='/p/kontak.html'>Kontak</a></div></nav><div class='header-tools'><a class='btn primary small' href='/p/kontak.html'>Kontak</a></div><button aria-controls='mainNav' aria-expanded='false' aria-label='Buka menu' class='icon-btn menu-toggle' type='button'><span class='menu-icon'><svg aria-hidden='true' class='icon' fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.7' viewBox='0 0 24 24'><path d='M4 6h16M4 12h16M4 18h16'/></svg></span><span class='close-icon'><svg aria-hidden='true' class='icon' fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.7' viewBox='0 0 24 24'><path d='m6 6 12 12M6 18 18 6'/></svg></span></button></div></header></div>
+<main id='main'><div class='layout-group group-home'><b:section id='compaHome0' name='Hero dan Ajakan Utama' showaddelement='yes'>
+  <b:widget id='HTML101' locked='true' title='Hero dan Ajakan Utama' type='HTML' version='2' visible='true'>
+    <b:widget-settings>
+      <b:widget-setting name='content'/>
+    </b:widget-settings>
+    <b:includable id='main'/>
+  </b:widget>
+</b:section><b:section id='compaFeedSettings' name='Artikel Beranda — label | jumlah' showaddelement='yes'>
+<b:widget id='HTML108' locked='true' title='Artikel Beranda — label | jumlah' type='HTML' version='2' visible='true'>
+  <b:widget-settings>
+    <b:widget-setting name='content'/>
+  </b:widget-settings>
+  <b:includable id='main'><div class='feed-config'><b:if cond='data:content'><data:content/><b:else/>recent|7</b:if></div></b:includable>
+</b:widget>
+</b:section></div><div class='layout-group group-post'><div class='post-main'><b:section id='compaBlog' name='Postingan dan Halaman' showaddelement='yes'>
+  <b:widget id='Blog1' locked='true' title='Postingan Blog' type='Blog' version='2' visible='true'>
+    <b:widget-settings>
+      <b:widget-setting name='showDateHeader'>false</b:widget-setting>
+      <b:widget-setting name='showShareButtons'>true</b:widget-setting>
+      <b:widget-setting name='showCommentLink'>true</b:widget-setting>
+      <b:widget-setting name='showAuthor'>false</b:widget-setting>
+      <b:widget-setting name='style.unittype'>TextAndImage</b:widget-setting>
+      <b:widget-setting name='timestampLabel'/>
+      <b:widget-setting name='reactionsLabel'/>
+      <b:widget-setting name='showAuthorProfile'>false</b:widget-setting>
+      <b:widget-setting name='style.layout'>1x1</b:widget-setting>
+      <b:widget-setting name='showLabels'>true</b:widget-setting>
+      <b:widget-setting name='showLocation'>true</b:widget-setting>
+      <b:widget-setting name='postLabelsLabel'/>
+      <b:widget-setting name='showTimestamp'>true</b:widget-setting>
+      <b:widget-setting name='postsPerAd'>3</b:widget-setting>
+      <b:widget-setting name='showBacklinks'>false</b:widget-setting>
+      <b:widget-setting name='showInlineAds'>true</b:widget-setting>
+      <b:widget-setting name='showReactions'>false</b:widget-setting>
+    </b:widget-settings>
+    <b:includable id='main'><b:if cond='data:view.isHomepage'><div class='wrap'><b:if cond='data:posts.empty'><div class='empty native-empty'><h2>Belum ada artikel.</h2><p>Artikel yang Anda terbitkan akan tampil di sini.</p></div><b:else/><div class='blog-list' data-feed='home'><b:loop index='postIndex' values='data:posts' var='post'><article class='blog-card' expr:data-post-url='data:post.url'><a aria-hidden='true' class='card-photo' expr:href='data:post.url' tabindex='-1'><b:if cond='data:post.featuredImage'><img decoding='async' expr:alt='data:post.title' expr:fetchpriority='data:postIndex == 0 ? &quot;high&quot; : &quot;auto&quot;' expr:loading='data:postIndex == 0 ? &quot;eager&quot; : &quot;lazy&quot;' expr:sizes='data:view.isHomepage and data:postIndex == 0 ? &quot;(min-width:1024px) 800px, (min-width:768px) 50vw, 100vw&quot; : &quot;(min-width:1280px) 384px, (min-width:768px) 45vw, 100vw&quot;' expr:src='resizeImage(data:post.featuredImage, 800)' expr:srcset='resizeImage(data:post.featuredImage, 480) + &quot; 480w, &quot; + resizeImage(data:post.featuredImage, 800) + &quot; 800w, &quot; + resizeImage(data:post.featuredImage, 1200) + &quot; 1200w&quot;' height='800' width='1200'/></b:if></a><div class='card-copy'><p class='card-meta'><data:post.author.name/> &#8226; <data:post.date/></p><h2 class='card-title'><a expr:href='data:post.url'><data:post.title/></a></h2><p class='card-excerpt'></p><div class='tags'><b:loop values='data:post.labels take 3' var='label'><a class='tag' expr:href='data:label.url'><data:label.name/></a></b:loop></div><div data-card-actions='true' expr:data-comments='data:post.numberOfComments'><a expr:href='data:post.url + &quot;#comments&quot;'>Lihat komentar</a></div></div></article></b:loop></div></b:if><nav aria-label='Navigasi artikel' class='pagination'><span><b:if cond='data:newerPageUrl'><a class='btn' expr:href='data:newerPageUrl'><svg aria-hidden='true' class='icon' fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.7' viewBox='0 0 24 24'><path d='M19 12H5m6-6-6 6 6 6'/></svg><span class='page-word'>Previous</span></a><b:else/><button aria-label='Previous Page' class='btn' disabled='disabled' type='button'><svg aria-hidden='true' class='icon' fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.7' viewBox='0 0 24 24'><path d='M19 12H5m6-6-6 6 6 6'/></svg><span class='page-word'>Previous</span></button></b:if></span><div class='page-numbers'><span class='current'>Page <b:if cond='data:newerPageUrl'>2<b:else/>1</b:if></span></div><span><b:if cond='data:olderPageUrl'><a class='btn' expr:href='data:olderPageUrl'><span class='page-word'>Next</span><svg aria-hidden='true' class='icon' fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.7' viewBox='0 0 24 24'><path d='M5 12h14m-6-6 6 6-6 6'/></svg></a><b:else/><button aria-label='Next Page' class='btn' disabled='disabled' type='button'><span class='page-word'>Next</span><svg aria-hidden='true' class='icon' fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.7' viewBox='0 0 24 24'><path d='M5 12h14m-6-6 6 6-6 6'/></svg></button></b:if></span></nav></div><b:elseif cond='data:view.isError'/><div class='wrap archive-section'><div class='empty'><h1>404</h1><p>Halaman tidak ditemukan.</p><a class='btn primary' href='/'>Kembali ke beranda</a></div></div><b:elseif cond='data:view.isSingleItem'/><b:loop values='data:posts' var='post'><b:if cond='data:view.isPage'><div class='static-content'><h1><data:post.title/></h1><div class='post-body'><data:post.body/></div></div><b:else/><article class='single-article'><header class='post-intro'><div class='wrap'><div class='post-badge'><b:loop values='data:post.labels take 1' var='label'><a expr:href='data:label.url'><data:label.name/></a></b:loop><span data-reading-time='true'>8 min read</span></div><h1><data:post.title/></h1><b:if cond='data:post.featuredImage'><img class='post-cover' decoding='async' expr:alt='data:post.title' expr:src='resizeImage(data:post.featuredImage, 1440)' expr:srcset='resizeImage(data:post.featuredImage, 640) + &quot; 640w, &quot; + resizeImage(data:post.featuredImage, 960) + &quot; 960w, &quot; + resizeImage(data:post.featuredImage, 1440) + &quot; 1440w&quot;' fetchpriority='high' height='640' loading='eager' sizes='(min-width:1280px) 1216px, 100vw' width='1216'/></b:if><div class='post-meta'><dl class='post-byline'><div><dt>Penulis</dt><dd><data:post.author.name/></dd></div><div><dt>Terbit pada</dt><dd><time data-post-date='true' expr:datetime='data:post.date.iso8601'><data:post.date/></time></dd></div></dl><div class='share-links'><button class='btn' data-copy-link='true' type='button'><svg aria-hidden='true' class='icon' fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.7' viewBox='0 0 24 24'><path d='M9 9h11v11H9zM5 15H3V3h12v2'/></svg>Copy link</button><a aria-label='Bagikan ke X' class='btn social-share' data-share='x' href='https://x.com/' rel='noopener' target='_blank'>𝕏</a><a aria-label='Bagikan ke Facebook' class='btn social-share' data-share='facebook' href='https://www.facebook.com/' rel='noopener' target='_blank'><strong>f</strong></a><a aria-label='Bagikan ke LinkedIn' class='btn social-share' data-share='linkedin' href='https://www.linkedin.com/' rel='noopener' target='_blank'><strong>in</strong></a></div></div></div></header><div class='wrap article-grid'><div class='article-main'><div class='post-body' data-article-body='true'><data:post.body/></div><b:if cond='data:post.allowComments'><div class='post-discussion'><b:include data='post' name='commentPicker'/></div></b:if></div><aside aria-label='Newsletter' class='article-sidebar' id='articleNewsletter'></aside></div></article></b:if></b:loop><b:else/><section class='archive-section'><div class='wrap'><div class='archive-heading'><h1><b:if cond='data:view.search.query'>Hasil pencarian: <data:view.search.query/><b:elseif cond='data:view.search.label'/>Topik: <data:view.search.label/><b:else/>Arsip artikel</b:if></h1><form action='/search' class='archive-search' method='get'><input aria-label='Cari artikel' expr:value='data:view.search.query' name='q' placeholder='Cari artikel…' type='search'/><button class='btn primary' type='submit'>Cari</button></form></div><!-- TB:NEWS_INDEX:HOST -->
+<div data-tb-news-index='true' hidden='hidden'></div><!-- TB:NEWS_INDEX:NATIVE:START -->
+<div class='tb-index-native'><b:if cond='data:posts.empty'><div class='empty'><h2>Tidak ada artikel yang sesuai.</h2><p>Coba kata kunci lain atau lihat semua artikel.</p><a class='btn' href='/search?max-results=7'>Semua artikel</a></div><b:else/><div class='blog-list'><b:loop index='postIndex' values='data:posts' var='post'><article class='blog-card' expr:data-post-url='data:post.url'><a aria-hidden='true' class='card-photo' expr:href='data:post.url' tabindex='-1'><b:if cond='data:post.featuredImage'><img decoding='async' expr:alt='data:post.title' expr:fetchpriority='data:postIndex == 0 ? &quot;high&quot; : &quot;auto&quot;' expr:loading='data:postIndex == 0 ? &quot;eager&quot; : &quot;lazy&quot;' expr:sizes='data:view.isHomepage and data:postIndex == 0 ? &quot;(min-width:1024px) 800px, (min-width:768px) 50vw, 100vw&quot; : &quot;(min-width:1280px) 384px, (min-width:768px) 45vw, 100vw&quot;' expr:src='resizeImage(data:post.featuredImage, 800)' expr:srcset='resizeImage(data:post.featuredImage, 480) + &quot; 480w, &quot; + resizeImage(data:post.featuredImage, 800) + &quot; 800w, &quot; + resizeImage(data:post.featuredImage, 1200) + &quot; 1200w&quot;' height='800' width='1200'/></b:if></a><div class='card-copy'><p class='card-meta'><data:post.author.name/> &#8226; <data:post.date/></p><h2 class='card-title'><a expr:href='data:post.url'><data:post.title/></a></h2><p class='card-excerpt'></p><div class='tags'><b:loop values='data:post.labels take 3' var='label'><a class='tag' expr:href='data:label.url'><data:label.name/></a></b:loop></div><div data-card-actions='true' expr:data-comments='data:post.numberOfComments'><a expr:href='data:post.url + &quot;#comments&quot;'>Lihat komentar</a></div></div></article></b:loop></div></b:if><nav aria-label='Navigasi artikel' class='pagination'><span><b:if cond='data:newerPageUrl'><a class='btn' expr:href='data:newerPageUrl'><svg aria-hidden='true' class='icon' fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.7' viewBox='0 0 24 24'><path d='M19 12H5m6-6-6 6 6 6'/></svg><span class='page-word'>Previous</span></a><b:else/><button aria-label='Previous Page' class='btn' disabled='disabled' type='button'><svg aria-hidden='true' class='icon' fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.7' viewBox='0 0 24 24'><path d='M19 12H5m6-6-6 6 6 6'/></svg><span class='page-word'>Previous</span></button></b:if></span><div class='page-numbers'><span class='current'>Page <b:if cond='data:newerPageUrl'>2<b:else/>1</b:if></span></div><span><b:if cond='data:olderPageUrl'><a class='btn' expr:href='data:olderPageUrl'><span class='page-word'>Next</span><svg aria-hidden='true' class='icon' fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.7' viewBox='0 0 24 24'><path d='M5 12h14m-6-6 6 6-6 6'/></svg></a><b:else/><button aria-label='Next Page' class='btn' disabled='disabled' type='button'><span class='page-word'>Next</span><svg aria-hidden='true' class='icon' fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.7' viewBox='0 0 24 24'><path d='M5 12h14m-6-6 6 6-6 6'/></svg></button></b:if></span></nav></div>
+<!-- TB:NEWS_INDEX:NATIVE:END --></div></section></b:if></b:includable>
+    <b:includable id='aboutPostAuthor'>
+  <div class='author-name'>
+    <a class='g-profile' expr:href='data:post.author.profileUrl' rel='author' title='author profile'>
+      <span>
+        <data:post.author.name/>
+      </span>
+    </a>
+  </div>
+  <div>
+    <span class='author-desc'>
+      <data:post.author.aboutMe/>
+    </span>
+  </div>
+</b:includable>
+    <b:includable id='addComments'>
+  <a expr:href='data:post.commentsUrl' expr:onclick='data:post.commentsUrlOnclick'>
+    <b:message name='messages.postAComment'/>
+  </a>
+</b:includable>
+    <b:includable id='commentAuthorAvatar'>
+  <div class='avatar-image-container'>
+    <img class='author-avatar' expr:src='data:comment.authorAvatarSrc' height='35' width='35'/>
+  </div>
+</b:includable>
+    <b:includable id='commentDeleteIcon' var='comment'>
+  <span expr:class='&quot;item-control &quot; + data:comment.adminClass'>
+    <b:if cond='data:showCmtPopup'>
+      <div class='goog-toggle-button'>
+        <div class='goog-inline-block comment-action-icon'></div>
+      </div>
+    <b:else/>
+      <a class='comment-delete' expr:href='data:comment.deleteUrl' expr:title='data:messages.deleteComment'>
+        <img src='https://resources.blogblog.com/img/icon_delete13.gif'/>
+      </a>
+    </b:if>
+  </span>
+</b:includable>
+    <b:includable id='commentForm' var='post'>
+  <div class='comment-form'>
+    <a name='comment-form'></a>
+    <h4 id='comment-post-message'><data:messages.postAComment/></h4>
+    <b:if cond='data:this.messages.blogComment != &quot;&quot;'>
+      <p><data:this.messages.blogComment/></p>
+    </b:if>
+    <b:include data='post' name='commentFormIframeSrc'/>
+    <iframe allowtransparency='allowtransparency' class='blogger-iframe-colorize blogger-comment-from-post' expr:height='data:cmtIframeInitialHeight ?: &quot;90px&quot;' frameborder='0' id='comment-editor' name='comment-editor' src='' width='100%'></iframe>
+    <data:post.cmtfpIframe/>
+    <script type='text/javascript'>
+      BLOG_CMT_createIframe(&#39;<data:post.appRpcRelayPath/>&#39;);
+    </script>
+  </div>
+</b:includable>
+    <b:includable id='commentFormIframeSrc' var='post'>
+  <a expr:href='data:post.commentFormIframeSrc' id='comment-editor-src'></a>
+</b:includable>
+    <b:includable id='commentItem' var='comment'>
+  <div class='comment' expr:id='&quot;c&quot; + data:comment.id'>
+    <b:include cond='data:blog.enabledCommentProfileImages' name='commentAuthorAvatar'/>
+
+    <div class='comment-block'>
+      <div class='comment-author'>
+        <b:if cond='data:comment.authorUrl'>
+          <b:message name='messages.authorSaidWithLink'>
+            <b:param expr:value='data:comment.author' name='authorName'/>
+            <b:param expr:value='data:comment.authorUrl' name='authorUrl'/>
+          </b:message>
+        <b:else/>
+          <b:message name='messages.authorSaid'>
+            <b:param expr:value='data:comment.author' name='authorName'/>
+          </b:message>
+        </b:if>
+      </div>
+      <div expr:class='&quot;comment-body&quot; + (data:comment.isDeleted ? &quot; deleted&quot; : &quot;&quot;)'>
+        <data:comment.body/>
+      </div>
+      <div class='comment-footer'>
+        <span class='comment-timestamp'>
+          <a expr:href='data:comment.url' title='comment permalink'>
+            <data:comment.timestamp/>
+          </a>
+          <b:include data='comment' name='commentDeleteIcon'/>
+        </span>
+      </div>
+    </div>
+  </div>
+</b:includable>
+    <b:includable id='commentList' var='comments'>
+  <div id='comments-block'>
+    <b:loop values='data:comments' var='comment'>
+      <b:include data='comment' name='commentItem'/>
+    </b:loop>
+  </div>
+</b:includable>
+    <b:includable id='commentPicker' var='post'>
+  <b:if cond='data:post.showThreadedComments'>
+    <b:include data='post' name='threadedComments'/>
+  <b:else/>
+    <b:include data='post' name='comments'/>
+  </b:if>
+</b:includable>
+    <b:includable id='comments' var='post'>
+  <section expr:class='&quot;comments&quot; + (data:post.embedCommentForm ? &quot; embed&quot; : &quot;&quot;)' expr:data-num-comments='data:post.numberOfComments' id='comments'>
+    <a name='comments'></a>
+    <b:if cond='data:post.allowComments'>
+
+      <b:include name='commentsTitle'/>
+
+      <div expr:id='data:widget.instanceId + &quot;_comments-block-wrapper&quot;'>
+        <b:include cond='data:post.comments' data='post.comments' name='commentList'/>
+      </div>
+
+      <b:if cond='data:post.commentPagingRequired'>
+        <div class='paging-control-container'>
+          <b:if cond='data:post.hasOlderLinks'>
+            <a expr:class='data:post.oldLinkClass' expr:href='data:post.oldestLinkUrl'>
+              <data:messages.oldest/>
+            </a>
+            <a expr:class='data:post.oldLinkClass' expr:href='data:post.olderLinkUrl'>
+              <data:messages.older/>
+            </a>
+          </b:if>
+
+          <span class='comment-range-text'>
+            <data:post.commentRangeText/>
+          </span>
+
+          <b:if cond='data:post.hasNewerLinks'>
+            <a expr:class='data:post.newLinkClass' expr:href='data:post.newerLinkUrl'>
+              <data:messages.newer/>
+            </a>
+            <a expr:class='data:post.newLinkClass' expr:href='data:post.newestLinkUrl'>
+              <data:messages.newest/>
+            </a>
+          </b:if>
+        </div>
+      </b:if>
+
+      <div class='footer'>
+        <b:if cond='data:post.embedCommentForm'>
+          <b:if cond='data:post.allowNewComments'>
+            <b:include data='post' name='commentForm'/>
+          <b:else/>
+            <data:post.noNewCommentsText/>
+          </b:if>
+        <b:else/>
+          <b:if cond='data:post.allowComments'>
+            <b:include data='post' name='addComments'/>
+          </b:if>
+        </b:if>
+      </div>
+    </b:if>
+    <b:if cond='data:showCmtPopup'>
+      <div id='comment-popup'>
+        <iframe allowtransparency='allowtransparency' frameborder='0' id='comment-actions' name='comment-actions' scrolling='no'>
+        </iframe>
+      </div>
+    </b:if>
+  </section>
+</b:includable>
+    <b:includable id='commentsTitle'>
+  <h3 class='title'><data:messages.comments/></h3>
+</b:includable>
+    <b:includable id='feedLinks'>
+  <b:if cond='!data:view.isPost'> <!-- Blog feed links -->
+    <b:if cond='data:feedLinks'>
+      <div class='blog-feeds'>
+        <b:include data='feedLinks' name='feedLinksBody'/>
+      </div>
+    </b:if>
+  <b:else/> <!--Post feed links -->
+    <div class='post-feeds'>
+      <b:loop values='data:posts' var='post'>
+        <b:if cond='data:post.allowComments and data:post.feedLinks'>
+          <b:include data='post.feedLinks' name='feedLinksBody'/>
+        </b:if>
+      </b:loop>
+    </div>
+  </b:if>
+</b:includable>
+    <b:includable id='feedLinksBody' var='links'>
+  <div class='feed-links'>
+  <data:messages.subscribeTo/>
+  <b:loop values='data:links' var='f'>
+     <a class='feed-link' expr:href='data:f.url' expr:type='data:f.mimeType' target='_blank'><data:f.name/> (<data:f.feedType/>)</a>
+  </b:loop>
+  </div>
+</b:includable>
+    <b:includable id='homePageLink'>
+  <a class='home-link' expr:href='data:blog.homepageUrl'>
+    <data:messages.home/>
+  </a>
+</b:includable>
+    <b:includable id='iframeComments' var='post'>
+  <!-- G+ comments, no longer available. The includable is retained for backwards-compatibility. -->
+</b:includable>
+    <b:includable id='inlineAd' var='post'>
+  <b:if cond='!data:view.isPreview'>
+    <b:if cond='data:this.adCode or data:this.adClientId or data:blog.adsenseClientId'>
+      <!-- Ad -->
+      <div class='inline-ad'>
+        <b:if cond='data:this.adCode != &quot;&quot;'>
+          <data:this.adCode/>
+        <b:else/>
+          <b:include cond='data:this.adClientId or data:blog.adsenseClientId' name='defaultAdUnit'/>
+        </b:if>
+      </div>
+    </b:if>
+  <b:else/>
+    <div class='inline-ad'>
+      <div class='inline-ad-placeholder'>
+        <span><b:message name='messages.adsGoHere'/></span>
+      </div>
+    </div>
+  </b:if>
+</b:includable>
+    <b:includable id='nextPageLink'>
+  <a class='blog-pager-older-link' expr:href='data:olderPageUrl' expr:id='data:widget.instanceId + &quot;_blog-pager-older-link&quot;' expr:title='data:messages.olderPosts'>
+    <data:messages.olderPosts/>
+  </a>
+</b:includable>
+    <b:includable id='post' var='post'>
+  <div class='post'>
+    <b:include data='post' name='postMeta'/>
+    <b:include data='post' name='postTitle'/>
+    <b:include name='headerByline'/>
+    <b:if cond='data:view.isSingleItem'>
+      <b:include data='post' name='postBody'/>
+    <b:else/>
+      <b:include data='post' name='postBodySnippet'/>
+      <b:include data='post' name='postJumpLink'/>
+    </b:if>
+    <b:include data='post' name='postFooter'/>
+  </div>
+</b:includable>
+    <b:includable id='postBody' var='post'>
+  <!-- If metaDescription is empty, use the post body as the schema.org description too, for G+/FB snippeting. -->
+  <div class='post-body entry-content float-container' expr:id='&quot;post-body-&quot; + data:post.id'>
+    <data:post.body/>
+  </div>
+</b:includable>
+    <b:includable id='postBodySnippet' var='post'>
+  <b:include data='post' name='postBody'/>
+</b:includable>
+    <b:includable id='postCommentsAndAd' var='post'>
+  <article class='post-outer-container'>
+    <!-- Post title and body -->
+    <div class='post-outer'>
+      <b:include data='post' name='post'/>
+    </div>
+
+    <!-- Comments -->
+    <b:include cond='data:view.isSingleItem' data='post' name='commentPicker'/>
+
+    <!-- Show ad inside post container, after comments, if single item. -->
+    <b:include cond='data:view.isSingleItem and data:post.includeAd' data='post' name='inlineAd'/>
+  </article>
+
+  <!-- Show ad outside post container (between posts) for feed pages. -->
+  <b:include cond='data:view.isMultipleItems and data:post.includeAd' data='post' name='inlineAd'/>
+</b:includable>
+    <b:includable id='postCommentsLink'>
+  <b:if cond='data:view.isMultipleItems'>
+    <span class='byline post-comment-link container'>
+      <b:include cond='data:post.commentSource != 1' name='commentsLink'/>
+    </span>
+  </b:if>
+</b:includable>
+    <b:includable id='postFooter' var='post'>
+  <div class='post-footer'>
+    <b:include name='footerBylines'/>
+    <b:include data='post' name='postFooterAuthorProfile'/>
+  </div>
+</b:includable>
+    <b:includable id='postFooterAuthorProfile' var='post'>
+  <b:if cond='data:post.author.aboutMe and data:view.isPost'>
+    <div class='author-profile'>
+      <b:if cond='data:post.author.authorPhoto.url'>
+        <img class='author-image' expr:src='data:post.author.authorPhoto.url' width='50px'/>
+        <div class='author-about'>
+          <b:include data='post' name='aboutPostAuthor'/>
+        </div>
+      <b:else/>
+        <b:include data='post' name='aboutPostAuthor'/>
+      </b:if>
+    </div>
+  </b:if>
+</b:includable>
+    <b:includable id='postHeader' var='post'>
+  <b:include name='headerByline'/>
+</b:includable>
+    <b:includable id='postMeta' var='post'>
+  <b:include data='post' name='postMetadataJSON'/>
+</b:includable>
+    <b:includable id='postPagination'>
+  <div class='blog-pager container' id='blog-pager'>
+    <b:include cond='data:newerPageUrl' name='previousPageLink'/>
+    <b:include cond='data:olderPageUrl' name='nextPageLink'/>
+    <b:include cond='data:view.url != data:blog.homepageUrl' name='homePageLink'/>
+  </div>
+</b:includable>
+    <b:includable id='postTitle' var='post'>
+  <a expr:name='data:post.id'></a>
+  <b:if cond='data:post.title != &quot;&quot;'>
+    <h3 class='post-title entry-title'>
+      <b:if cond='data:post.link or (data:post.url and data:view.url != data:post.url)'>
+        <a expr:href='data:post.link ?: data:post.url'><data:post.title/></a>
+      <b:else/>
+        <data:post.title/>
+      </b:if>
+    </h3>
+  </b:if>
+</b:includable>
+    <b:includable id='previousPageLink'>
+  <a class='blog-pager-newer-link' expr:href='data:newerPageUrl' expr:id='data:widget.instanceId + &quot;_blog-pager-newer-link&quot;' expr:title='data:messages.newerPosts'>
+    <data:messages.newerPosts/>
+  </a>
+</b:includable>
+    <b:includable id='threadedCommentForm' var='post'>
+  <div class='comment-form'>
+    <a name='comment-form'></a>
+    <h4 id='comment-post-message'><data:messages.postAComment/></h4>
+    <b:if cond='data:this.messages.blogComment != &quot;&quot;'>
+      <p><data:this.messages.blogComment/></p>
+    </b:if>
+    <b:include data='post' name='commentFormIframeSrc'/>
+    <iframe allowtransparency='allowtransparency' class='blogger-iframe-colorize blogger-comment-from-post' expr:height='data:cmtIframeInitialHeight ?: &quot;90px&quot;' frameborder='0' id='comment-editor' name='comment-editor' src='' width='100%'></iframe>
+    <data:post.cmtfpIframe/>
+    <script type='text/javascript'>
+      BLOG_CMT_createIframe(&#39;<data:post.appRpcRelayPath/>&#39;);
+    </script>
+  </div>
+</b:includable>
+    <b:includable id='threadedCommentJs' var='post'>
+  <script async='async' expr:src='data:post.commentSrc' type='text/javascript'></script>
+  <b:template-script inline='true' name='threaded_comments'/>
+  <script type='text/javascript'>
+    blogger.widgets.blog.initThreadedComments(
+        <data:post.commentJso/>,
+        <data:post.commentMsgs/>,
+        <data:post.commentConfig/>);
+  </script>
+</b:includable>
+    <b:includable id='threadedComments' var='post'>
+  <section class='comments threaded' expr:data-embed='data:post.embedCommentForm' expr:data-num-comments='data:post.numberOfComments' id='comments'>
+    <a name='comments'></a>
+
+    <b:include name='commentsTitle'/>
+
+    <div class='comments-content'>
+      <b:if cond='data:post.embedCommentForm'>
+        <b:include data='post' name='threadedCommentJs'/>
+      </b:if>
+      <div id='comment-holder'>
+         <data:post.commentHtml/>
+      </div>
+    </div>
+
+    <p class='comment-footer'>
+      <b:if cond='data:post.allowNewComments'>
+        <b:include data='post' name='threadedCommentForm'/>
+      <b:else/>
+        <data:post.noNewCommentsText/>
+      </b:if>
+      <b:if cond='data:post.showManageComments'>
+        <b:include data='post' name='manageComments'/>
+      </b:if>
+    </p>
+
+    <b:if cond='data:showCmtPopup'>
+      <div id='comment-popup'>
+        <iframe allowtransparency='allowtransparency' frameborder='0' id='comment-actions' name='comment-actions' scrolling='no'>
+        </iframe>
+      </div>
+    </b:if>
+  </section>
+</b:includable>
+    <b:includable id='tooltipCss'>
+  <!-- LINT.IfChange -->
+  <style>
+    .post-body a.b-tooltip-container {
+      position: relative;
+      display: inline-block;
+    }
+
+    .post-body a.b-tooltip-container .b-tooltip {
+      display: block !important;
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translate(-20%, 1px);
+      visibility: hidden;
+      opacity: 0;
+      z-index: 1;
+      transition: opacity 0.2s ease-in-out;
+    }
+
+    .post-body a.b-tooltip-container .b-tooltip iframe {
+      width: 200px;
+      height: 198px;
+      max-width: none;
+      border: none;
+      border-radius: 20px;
+      box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.2);
+    }
+
+    @media (hover: hover) {
+      .post-body a.b-tooltip-container:hover .b-tooltip {
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+  </style>
+  <!-- LINT.ThenChange(//depot/google3/java/com/google/blogger/b2/layouts/widgets/v2-style.css) -->
+</b:includable>
+  </b:widget>
+</b:section></div><div class='post-sidebar'><b:section id='insightArticleNewsletter' name='Newsletter Artikel' showaddelement='yes'>
+  <b:widget id='HTML202' locked='true' title='Newsletter Artikel' type='HTML' version='2' visible='true'>
+    <b:widget-settings>
+      <b:widget-setting name='content'/>
+    </b:widget-settings>
+    <b:includable id='main'><b:if cond='data:view.isPost'><b:if cond='data:content'><data:content/><b:else/><b:if cond='data:view.isPost'><div class='newsletter-box'><div class='mail-icon'><svg aria-hidden='true' class='icon' fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.7' viewBox='0 0 24 24'><path d='m22 2-7 20-4-9-9-4 20-7ZM22 2 11 13'/></svg></div><h2>Ikuti artikel terbaru</h2><p>Dapatkan kabar artikel terbaru. Anda juga dapat mengikuti blog melalui RSS.</p><form action='/search' class='newsletter-form' method='get'><div class='email-field'><label class='sr-only' for='postEmail'>Email</label><input autocomplete='email' id='postEmail' name='email' placeholder='Alamat email' required='required' type='email'/><p>Read about our <a href='/p/privasi.html'>privacy policy</a>.</p></div><button class='btn primary' type='submit'>Berlangganan</button><p aria-live='polite' class='form-status' role='status'></p></form></div></b:if></b:if></b:if></b:includable>
+  </b:widget>
+</b:section></div><script type='text/javascript'>//<![CDATA[
+(()=>{const dest=document.getElementById('articleNewsletter'),src=document.getElementById('insightArticleNewsletter');if(dest&&src)dest.append(src)})();
+//]]></script></div><b:section id='insightLatest' name='Artikel Terbaru' showaddelement='yes'>
+<b:widget id='HTML203' locked='true' title='Artikel Terbaru' type='HTML' version='2' visible='true'>
+  <b:widget-settings>
+    <b:widget-setting name='content'/>
+  </b:widget-settings>
+  <b:includable id='main'><b:if cond='data:view.isHomepage'><b:if cond='data:content'><data:content/><b:else/><b:if cond='data:view.isHomepage'><section class='latest-section' data-carousel='true'><div class='wrap'><div class='section-heading'><div><h2>Artikel terbaru</h2><p>Pilihan tulisan, kabar, dan wawasan terbaru.</p></div><a class='btn' href='/search?max-results=7'>Semua artikel <svg aria-hidden='true' class='icon' fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.7' viewBox='0 0 24 24'><path d='M5 12h14m-6-6 6 6-6 6'/></svg></a></div><div aria-live='polite' class='carousel-track' data-feed='latest'><p class='feed-status'>Memuat artikel terbaru&#8230;</p></div><div class='carousel-controls'><button aria-label='Previous slide' class='round-btn' data-slide-prev='true' type='button'><svg aria-hidden='true' class='icon' fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.7' viewBox='0 0 24 24'><path d='M19 12H5m6-6-6 6 6 6'/></svg></button><button aria-label='Next slide' class='round-btn' data-slide-next='true' type='button'><svg aria-hidden='true' class='icon' fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.7' viewBox='0 0 24 24'><path d='M5 12h14m-6-6 6 6-6 6'/></svg></button></div></div></section></b:if></b:if></b:if></b:includable>
+</b:widget>
+</b:section><b:section id='insightCta' name='Ajakan dan Foto Beranda' showaddelement='yes'>
+<b:widget id='HTML204' locked='true' title='Ajakan dan Foto Beranda' type='HTML' version='2' visible='true'>
+  <b:widget-settings>
+    <b:widget-setting name='content'/>
+  </b:widget-settings>
+  <b:includable id='main'><b:if cond='data:content'><data:content/></b:if></b:includable>
+</b:widget>
+</b:section><b:section id='insightRelated' name='Artikel Terkait' showaddelement='yes'>
+<b:widget id='HTML205' locked='true' title='Artikel Terkait' type='HTML' version='2' visible='true'>
+  <b:widget-settings>
+    <b:widget-setting name='content'/>
+  </b:widget-settings>
+  <b:includable id='main'><b:if cond='data:view.isPost'><b:if cond='data:content'><data:content/><b:else/><b:if cond='data:view.isPost'><section class='related-section'><div class='wrap related-grid'><div class='related-heading'><span class='eyebrow'>Latest</span><h2>Baca juga</h2><p>Pilihan artikel dan wawasan terbaru untuk Anda.</p><a class='btn primary' href='/search?max-results=7'>Semua artikel</a></div><div class='related-cards' data-feed='related'><p class='feed-status'>Memuat artikel&#8230;</p></div></div></section></b:if></b:if></b:if></b:includable>
+</b:widget>
+</b:section><div class='legacy-settings'><b:section id='compaLabels' name='Label Artikel' showaddelement='yes'>
+  <b:widget id='Label1' locked='true' title='Topik Artikel' type='Label' version='2' visible='true'>
+    <b:widget-settings>
+      <b:widget-setting name='sorting'>ALPHA</b:widget-setting>
+      <b:widget-setting name='display'>LIST</b:widget-setting>
+      <b:widget-setting name='selectedLabelsList'/>
+      <b:widget-setting name='showType'>ALL</b:widget-setting>
+      <b:widget-setting name='showFreqNumbers'>false</b:widget-setting>
+    </b:widget-settings>
+    <b:includable id='main'><div class='label-navigation'><b:loop values='data:labels' var='label'><a class='tag' expr:href='data:label.url'><data:label.name/></a></b:loop></div></b:includable>
+    <b:includable id='cloud'>
+  <b:loop values='data:labels' var='label'>
+    <span class='label-size'>
+      <b:class expr:name='&quot;label-size-&quot; + data:label.cssSize'/>
+      <a class='label-name' expr:href='data:label.url'>
+        <data:label.name/>
+        <b:if cond='data:this.showFreqNumbers'>
+          <span class='label-count'><data:label.count/></span>
+        </b:if>
+      </a>
+    </span>
+  </b:loop>
+</b:includable>
+    <b:includable id='content'>
+  <div class='widget-content'>
+    <b:class expr:name='data:this.display + &quot;-label-widget-content&quot;'/>
+    <b:include cond='data:this.display == &quot;list&quot;' name='list'/>
+    <b:include cond='data:this.display == &quot;cloud&quot;' name='cloud'/>
+  </div>
+</b:includable>
+    <b:includable id='list'>
+  <ul>
+    <b:loop values='data:labels' var='label'>
+      <li>
+        <a class='label-name' expr:href='data:label.url'>
+          <data:label.name/>
+          <b:if cond='data:this.showFreqNumbers'>
+            <span class='label-count'><data:label.count/></span>
+          </b:if>
+        </a>
+      </li>
+    </b:loop>
+  </ul>
+</b:includable>
+  </b:widget>
+</b:section></div></main><div class='layout-group group-footer'><footer class='site-footer'><div class='wrap'><div class='footer-main'><div class='footer-profile'><b:section id='compaFooterProfile' name='Profil Footer' showaddelement='yes'>
+  <b:widget id='HTML110' locked='true' title='Profil Footer' type='HTML' version='2' visible='true'>
+    <b:widget-settings>
+      <b:widget-setting name='content'/>
+    </b:widget-settings>
+    <b:includable id='main'><b:if cond='data:content'><data:content/><b:else/><a class='brand' data-footer-brand='true' expr:href='data:blog.homepageUrl'><span aria-hidden='true' class='brand-mark'></span><span><data:blog.title/></span></a><p>Design amazing digital experiences that create more happy in the world.</p><div class='footer-note'><span aria-hidden='true' class='laurel'><svg aria-hidden='true' viewBox='0 0 24 60'><path d='M21 57C5 49 1 24 17 3M16 5C11 4 7 6 8 12c5 0 8-3 8-7ZM10 15C5 13 2 16 4 22c5-1 7-3 6-7ZM6 28c-5-1-6 3-3 8 5-2 5-5 3-8ZM9 42c-5 1-4 5 1 8 3-4 2-6-1-8ZM14 52c-3 2-2 5 4 7 2-4 0-6-4-7M12 13c5-3 8-1 7 4-4 2-7 0-7-4ZM8 25c5-3 8-1 7 4-4 2-7 0-7-4ZM9 37c5-2 8 1 5 5-5 1-7-2-5-5Z'/></svg></span><div><span aria-hidden='true' class='stars'>&#9733;&#9733;&#9733;&#9733;&#9733;</span><strong>Design &amp; insight</strong><span>A space for new ideas</span></div><span aria-hidden='true' class='laurel right'><svg aria-hidden='true' viewBox='0 0 24 60'><path d='M21 57C5 49 1 24 17 3M16 5C11 4 7 6 8 12c5 0 8-3 8-7ZM10 15C5 13 2 16 4 22c5-1 7-3 6-7ZM6 28c-5-1-6 3-3 8 5-2 5-5 3-8ZM9 42c-5 1-4 5 1 8 3-4 2-6-1-8ZM14 52c-3 2-2 5 4 7 2-4 0-6-4-7M12 13c5-3 8-1 7 4-4 2-7 0-7-4ZM8 25c5-3 8-1 7 4-4 2-7 0-7-4ZM9 37c5-2 8 1 5 5-5 1-7-2-5-5Z'/></svg></span></div></b:if></b:includable>
+  </b:widget>
+</b:section><nav aria-label='Menu footer' class='footer-flat-links'><b:section id='compaFooter4' name='Menu Footer' showaddelement='yes'>
+<b:widget id='LinkList4' locked='true' title='Menu Footer' type='LinkList' version='2' visible='true'>
+  <b:widget-settings><b:widget-setting name='sorting'>NONE</b:widget-setting><b:widget-setting name='text-0'>Beranda</b:widget-setting><b:widget-setting name='link-0'>/</b:widget-setting><b:widget-setting name='text-1'>Blog</b:widget-setting><b:widget-setting name='link-1'>/search?max-results=7</b:widget-setting><b:widget-setting name='text-2'>Indeks Berita</b:widget-setting><b:widget-setting name='link-2'>/search?view=index</b:widget-setting><b:widget-setting name='text-3'>Tentang</b:widget-setting><b:widget-setting name='link-3'>/p/tentang.html</b:widget-setting><b:widget-setting name='text-4'>Kontak</b:widget-setting><b:widget-setting name='link-4'>/p/kontak.html</b:widget-setting><b:widget-setting name='text-5'>Privasi</b:widget-setting><b:widget-setting name='link-5'>/p/privasi.html</b:widget-setting></b:widget-settings>
+  <b:includable id='main'><ul><b:loop values='data:links' var='link'><li><a expr:href='data:link.target'><data:link.name/></a></li></b:loop></ul></b:includable>
+  <b:includable id='content'>
+ <div class='widget-content'>
+   <ul>
+     <b:loop values='data:links' var='link'>
+       <li><a expr:href='data:link.target'><data:link.name/></a></li>
+     </b:loop>
+   </ul>
+ </div>
+</b:includable>
+</b:widget>
+</b:section></nav></div><div class='footer-columns'><div class='footer-column'><h3>Layanan</h3><b:section id='compaFooter3' name='Layanan' showaddelement='yes'>
+<b:widget id='LinkList3' locked='true' title='Layanan' type='LinkList' version='2' visible='true'>
+  <b:widget-settings><b:widget-setting name='sorting'>NONE</b:widget-setting><b:widget-setting name='text-0'>Artikel Terbaru</b:widget-setting><b:widget-setting name='link-0'>/search?max-results=7</b:widget-setting><b:widget-setting name='text-1'>Indeks Berita</b:widget-setting><b:widget-setting name='link-1'>/search?view=index</b:widget-setting></b:widget-settings>
+  <b:includable id='main'><ul><b:loop values='data:links' var='link'><li><a expr:href='data:link.target'><data:link.name/></a></li></b:loop></ul></b:includable>
+  <b:includable id='content'>
+ <div class='widget-content'>
+   <ul>
+     <b:loop values='data:links' var='link'>
+       <li><a expr:href='data:link.target'><data:link.name/></a></li>
+     </b:loop>
+   </ul>
+ </div>
+</b:includable>
+</b:widget>
+</b:section></div><div class='footer-column'><h3>Perusahaan</h3><b:section id='compaFooter2' name='Perusahaan' showaddelement='yes'>
+<b:widget id='LinkList2' locked='true' title='Perusahaan' type='LinkList' version='2' visible='true'>
+  <b:widget-settings><b:widget-setting name='sorting'>NONE</b:widget-setting><b:widget-setting name='text-0'>Tentang</b:widget-setting><b:widget-setting name='link-0'>/p/tentang.html</b:widget-setting><b:widget-setting name='text-1'>Kontak</b:widget-setting><b:widget-setting name='link-1'>/p/kontak.html</b:widget-setting></b:widget-settings>
+  <b:includable id='main'><ul><b:loop values='data:links' var='link'><li><a expr:href='data:link.target'><data:link.name/></a></li></b:loop></ul></b:includable>
+  <b:includable id='content'>
+ <div class='widget-content'>
+   <ul>
+     <b:loop values='data:links' var='link'>
+       <li><a expr:href='data:link.target'><data:link.name/></a></li>
+     </b:loop>
+   </ul>
+ </div>
+</b:includable>
+</b:widget>
+</b:section></div><div class='footer-column'><h3>Informasi</h3></div><div class='footer-column'><h3>Social</h3><b:section id='insightFooterSocial' name='Social' showaddelement='yes'>
+<b:widget id='LinkList6' locked='true' title='Social' type='LinkList' version='2' visible='true'>
+  <b:widget-settings><b:widget-setting name='sorting'>NONE</b:widget-setting><b:widget-setting name='text-0'>Instagram</b:widget-setting><b:widget-setting name='link-0'>https://www.instagram.com/</b:widget-setting><b:widget-setting name='text-1'>LinkedIn</b:widget-setting><b:widget-setting name='link-1'>https://www.linkedin.com/</b:widget-setting></b:widget-settings>
+  <b:includable id='main'><ul><b:loop values='data:links' var='link'><li><a expr:href='data:link.target'><data:link.name/></a></li></b:loop></ul></b:includable>
+  <b:includable id='content'>
+ <div class='widget-content'>
+   <ul>
+     <b:loop values='data:links' var='link'>
+       <li><a expr:href='data:link.target'><data:link.name/></a></li>
+     </b:loop>
+   </ul>
+ </div>
+</b:includable>
+</b:widget>
+</b:section></div><div class='footer-column'><h3>Legal</h3></div></div><div class='footer-newsletter'><b:section id='insightFooterNewsletter' name='Newsletter Footer' showaddelement='yes'>
+  <b:widget id='HTML206' locked='true' title='Newsletter Footer' type='HTML' version='2' visible='true'>
+    <b:widget-settings>
+      <b:widget-setting name='content'/>
+    </b:widget-settings>
+    <b:includable id='main'><b:if cond='data:content'><data:content/><b:else/><h3>Ikuti artikel terbaru</h3><form action='/search' class='newsletter-form' method='get'><div class='email-field'><label class='sr-only' for='footerEmail'>Email</label><input autocomplete='email' id='footerEmail' name='email' placeholder='Alamat email' required='required' type='email'/><p>We care about your data in our <a href='/p/privasi.html'>privacy policy</a>.</p></div><button class='btn primary' type='submit'>Berlangganan</button><p aria-live='polite' class='form-status' role='status'></p></form></b:if></b:includable>
+  </b:widget>
+</b:section></div></div><div class='footer-bottom'><b:section id='compaCredit' name='Kredit Footer' showaddelement='yes'>
+  <b:widget id='HTML111' locked='true' title='Kredit Footer' type='HTML' version='2' visible='true'>
+    <b:widget-settings>
+      <b:widget-setting name='content'/>
+    </b:widget-settings>
+    <b:includable id='main'><b:if cond='data:content'><data:content/><b:else/>&#169; 2026 <a href='https://www.temablogger.com/'>Tema Blogger</a>. All rights reserved.</b:if></b:includable>
+  </b:widget>
+</b:section><b:section class='social' id='compaSocial' name='Media Sosial' showaddelement='yes'>
+<b:widget id='LinkList5' locked='true' title='Media Sosial' type='LinkList' version='2' visible='true'>
+  <b:widget-settings><b:widget-setting name='sorting'>NONE</b:widget-setting><b:widget-setting name='text-0'>Instagram</b:widget-setting><b:widget-setting name='link-0'>https://www.instagram.com/</b:widget-setting><b:widget-setting name='text-1'>LinkedIn</b:widget-setting><b:widget-setting name='link-1'>https://www.linkedin.com/</b:widget-setting></b:widget-settings>
+  <b:includable id='main'><ul><b:loop values='data:links' var='link'><li><a expr:href='data:link.target'><data:link.name/></a></li></b:loop></ul></b:includable>
+  <b:includable id='content'>
+ <div class='widget-content'>
+   <ul>
+     <b:loop values='data:links' var='link'>
+       <li><a expr:href='data:link.target'><data:link.name/></a></li>
+     </b:loop>
+   </ul>
+ </div>
+</b:includable>
+</b:widget>
+</b:section><nav aria-label='Tautan footer' class='footer-legal'><b:section id='insightFooterLegal' name='Legal' showaddelement='yes'>
+<b:widget id='LinkList7' locked='true' title='Legal' type='LinkList' version='2' visible='true'>
+  <b:widget-settings><b:widget-setting name='sorting'>NONE</b:widget-setting><b:widget-setting name='text-0'>Privasi</b:widget-setting><b:widget-setting name='link-0'>/p/privasi.html</b:widget-setting><b:widget-setting name='text-1'>Kontak</b:widget-setting><b:widget-setting name='link-1'>/p/kontak.html</b:widget-setting><b:widget-setting name='text-2'>RSS</b:widget-setting><b:widget-setting name='link-2'>/feeds/posts/default</b:widget-setting></b:widget-settings>
+  <b:includable id='main'><ul><b:loop values='data:links' var='link'><li><a expr:href='data:link.target'><data:link.name/></a></li></b:loop></ul></b:includable>
+  <b:includable id='content'>
+ <div class='widget-content'>
+   <ul>
+     <b:loop values='data:links' var='link'>
+       <li><a expr:href='data:link.target'><data:link.name/></a></li>
+     </b:loop>
+   </ul>
+ </div>
+</b:includable>
+</b:widget>
+</b:section></nav></div></div></footer></div><div class='layout-group group-legacy legacy-settings'><b:section id='compaHome1' name='Logo Mitra Ilustrasi' showaddelement='yes'>
+  <b:widget id='HTML102' locked='true' title='Logo Mitra Ilustrasi' type='HTML' version='2' visible='true'>
+    <b:widget-settings>
+      <b:widget-setting name='content'/>
+    </b:widget-settings>
+    <b:includable id='main'><b:if cond='data:view.isHomepage'><b:if cond='data:content'><data:content/><b:else/><div class='trust'><div class='wrap'><p>Ruang bagi brand yang ingin melangkah lebih jauh &#183; Logo ilustrasi</p><div class='client-list'><span><b>&#9672;</b>Nuvora</span><span><b>&#8857;</b>Sela</span><span><b>&#9639;</b>Aster</span><span><b>&#8984;</b>Metrik</span><span><b>&#8599;</b>Ruang</span><span><b>&#9671;</b>Folio</span></div></div></div></b:if></b:if></b:includable>
+  </b:widget>
+</b:section><b:section id='compaHome2' name='Layanan Beranda' showaddelement='yes'>
+<b:widget id='HTML103' locked='true' title='Layanan Beranda' type='HTML' version='2' visible='true'>
+  <b:widget-settings>
+    <b:widget-setting name='content'/>
+  </b:widget-settings>
+  <b:includable id='main'><b:if cond='data:view.isHomepage'><b:if cond='data:content'><data:content/><b:else/><section class='section '><div class='wrap'><div class='section-heading'><div><span class='eyebrow'>Apa yang kami lakukan</span><h2>Partner untuk setiap<br/>langkah pertumbuhan.</h2><p>Dari ide pertama sampai pengalaman digital yang utuh. Semua bekerja bersama, untuk bisnis Anda.</p></div></div><div class='grid-3'><article class='service-card'><span class='service-number'>01</span><div class='feature-icon'><svg aria-hidden='true' class='icon' fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.7' viewBox='0 0 24 24'><path d='M12 3 3 8l9 5 9-5-9-5ZM3 12l9 5 9-5M3 16l9 5 9-5'/></svg></div><h3>Strategi yang terarah</h3><p>Temukan posisi brand, pahami pelanggan, dan susun langkah pertumbuhan dengan tujuan yang jelas.</p><a class='btn text' href='/p/layanan-strategi.html'>Pelajari layanan <svg aria-hidden='true' class='icon' fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.7' viewBox='0 0 24 24'><path d='M5 12h14m-6-6 6 6-6 6'/></svg></a></article><article class='service-card'><span class='service-number'>02</span><div class='feature-icon'><svg aria-hidden='true' class='icon' fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.7' viewBox='0 0 24 24'><path d='M4 4h6v6H4zM14 14h6v6h-6zM14 7h6M17 4v6M4 17h6M7 14v6'/></svg></div><h3>Desain yang bermakna</h3><p>Identitas visual dan pengalaman digital yang menghubungkan bisnis Anda dengan orang yang tepat.</p><a class='btn text' href='/p/layanan-desain.html'>Pelajari layanan <svg aria-hidden='true' class='icon' fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.7' viewBox='0 0 24 24'><path d='M5 12h14m-6-6 6 6-6 6'/></svg></a></article><article class='service-card'><span class='service-number'>03</span><div class='feature-icon'><svg aria-hidden='true' class='icon' fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.7' viewBox='0 0 24 24'><path d='m8 6-6 6 6 6m8-12 6 6-6 6m-3-14-2 16'/></svg></div><h3>Teknologi yang bekerja</h3><p>Website yang cepat, nyaman digunakan, dan dirancang untuk mendukung kebutuhan bisnis Anda.</p><a class='btn text' href='/p/layanan-website.html'>Pelajari layanan <svg aria-hidden='true' class='icon' fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.7' viewBox='0 0 24 24'><path d='M5 12h14m-6-6 6 6-6 6'/></svg></a></article></div></div></section></b:if></b:if></b:includable>
+</b:widget>
+</b:section><b:section id='compaHome3' name='Portofolio Beranda' showaddelement='yes'>
+<b:widget id='HTML104' locked='true' title='Portofolio Beranda' type='HTML' version='2' visible='true'>
+  <b:widget-settings>
+    <b:widget-setting name='content'/>
+  </b:widget-settings>
+  <b:includable id='main'><b:if cond='data:view.isHomepage'><b:if cond='data:content'><data:content/><b:else/><section class='section soft'><div class='wrap'><div class='section-heading'><div><span class='eyebrow'>Karya pilihan</span><h2>Ide yang menjadi pengalaman.</h2><p>Eksplorasi bagaimana strategi, desain, dan teknologi bertemu.</p></div><a class='btn' href='/p/portofolio.html'>Semua proyek<svg aria-hidden='true' class='icon' fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.7' viewBox='0 0 24 24'><path d='M5 12h14m-6-6 6 6-6 6'/></svg></a></div><div class='grid-2'><article data-project='web'><a aria-label='Lihat studi kasus Orbit' href='/p/studi-kasus.html'><div class='project-art'><div class='mock-window'><div class='mock-nav'><strong>orbit.</strong><span>Studio &#160; Journal &#160; Contact</span></div><div class='mock-hero'><div><h3>A new way to move forward.</h3><p>Thoughtfully designed. Made for everyday possibilities.</p><span class='tag'>Explore the collection &#8599;</span></div><div class='mock-orb'></div></div></div></div><div class='project-meta'><div><h3>Orbit</h3><p>Website company profile untuk bisnis masa depan.</p></div><span class='project-arrow'>&#8599;</span></div></a><span class='tag'>Web design</span><span class='tag'>Development</span></article><article data-project='brand'><a aria-label='Lihat studi kasus Akar' href='/p/studi-kasus-akar.html'><div class='project-art mint'><div class='mock-window'><div class='mock-nav'><strong>akar.</strong><span>Studio &#160; Journal &#160; Contact</span></div><div class='mock-hero'><div><h3>Naturally better.</h3><p>Thoughtfully designed. Made for everyday possibilities.</p><span class='tag'>Explore the collection &#8599;</span></div><div class='mock-orb'></div></div></div></div><div class='project-meta'><div><h3>Akar</h3><p>Identitas baru untuk kehidupan yang lebih natural.</p></div><span class='project-arrow'>&#8599;</span></div></a><span class='tag'>Brand identity</span><span class='tag'>Strategy</span></article></div><p class='status-msg'>Studi kasus ilustrasi untuk menunjukkan tampilan portofolio.</p></div></section></b:if></b:if></b:includable>
+</b:widget>
+</b:section><b:section id='compaHome4' name='Tentang Beranda' showaddelement='yes'>
+<b:widget id='HTML105' locked='true' title='Tentang Beranda' type='HTML' version='2' visible='true'>
+  <b:widget-settings>
+    <b:widget-setting name='content'/>
+  </b:widget-settings>
+  <b:includable id='main'><b:if cond='data:view.isHomepage'><b:if cond='data:content'><data:content/><b:else/><section class='section '><div class='wrap'><div class='split'><img alt='Ruang kerja yang terbuka dan nyaman' class='about-visual' height='900' loading='lazy' src='https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&amp;fit=crop&amp;w=1200&amp;q=85' width='800'/><div><span class='eyebrow'>Tentang Compa</span><h2>Tim kecil.<br/>Perspektif yang luas.</h2><p class='lede'>Kami percaya pekerjaan terbaik lahir dari rasa ingin tahu, kolaborasi yang terbuka, dan perhatian pada hal-hal kecil.</p><ul class='check-list'><li>Satu tim dari strategi hingga eksekusi</li><li>Proses transparan dan komunikasi yang dekat</li><li>Solusi yang mengikuti kebutuhan bisnis Anda</li></ul><div class='actions'><a class='btn' href='/p/tentang.html'>Kenali kami lebih dekat<svg aria-hidden='true' class='icon' fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.7' viewBox='0 0 24 24'><path d='M5 12h14m-6-6 6 6-6 6'/></svg></a></div><div class='mini-stats'><div><strong>3</strong><span>Fokus layanan</span></div><div><strong>4</strong><span>Tahap kolaborasi</span></div><div><strong>1</strong><span>Tim terintegrasi</span></div></div></div></div></div></section></b:if></b:if></b:includable>
+</b:widget>
+</b:section><b:section id='compaHome5' name='Proses Kerja' showaddelement='yes'>
+<b:widget id='HTML106' locked='true' title='Proses Kerja' type='HTML' version='2' visible='true'>
+  <b:widget-settings>
+    <b:widget-setting name='content'/>
+  </b:widget-settings>
+  <b:includable id='main'><b:if cond='data:view.isHomepage'><b:if cond='data:content'><data:content/><b:else/><section class='section '><div class='wrap'><div class='section-heading'><div><span class='eyebrow'>Cara kami bekerja</span><h2>Jelas di setiap langkah.</h2><p>Sebuah proses yang sederhana, kolaboratif, dan berfokus pada tujuan Anda.</p></div></div><div class='process'><article class='step'><strong>01 / Discover</strong><h3>Mulai dari mendengar</h3><p>Kami memahami bisnis, tantangan, dan tujuan yang ingin Anda capai.</p></article><article class='step'><strong>02 / Define</strong><h3>Tentukan arah bersama</h3><p>Strategi, ruang lingkup, dan prioritas disepakati sebelum pengerjaan.</p></article><article class='step'><strong>03 / Create</strong><h3>Wujudkan ide terbaik</h3><p>Desain dan pengembangan berjalan dengan masukan Anda di setiap tahap.</p></article><article class='step'><strong>04 / Grow</strong><h3>Luncurkan dan tumbuh</h3><p>Kami membantu peluncuran, serah terima, dan rencana pengembangan.</p></article></div></div></section></b:if></b:if></b:includable>
+</b:widget>
+</b:section><b:section id='compaHome6' name='Filosofi Compa' showaddelement='yes'>
+<b:widget id='HTML107' locked='true' title='Filosofi Compa' type='HTML' version='2' visible='true'>
+  <b:widget-settings>
+    <b:widget-setting name='content'/>
+  </b:widget-settings>
+  <b:includable id='main'><b:if cond='data:view.isHomepage'><b:if cond='data:content'><data:content/><b:else/><section class='section '><div class='wrap'><figure class='quote-box'><span class='quote-label'>Filosofi kami</span><blockquote>&#8220;Desain yang baik bukan sekadar terlihat menarik. Ia membuat setiap langkah terasa lebih mudah.&#8221;</blockquote><figcaption class='quote-person'>Compa Studio<span>Strategi, desain, dan teknologi dalam satu percakapan.</span></figcaption></figure></div></section></b:if></b:if></b:includable>
+</b:widget>
+</b:section><b:section id='compaHomeBlog' name='Bagian Artikel Beranda' showaddelement='yes'>
+<b:widget id='HTML109' locked='true' title='Bagian Artikel Beranda' type='HTML' version='2' visible='true'>
+  <b:widget-settings>
+    <b:widget-setting name='content'/>
+  </b:widget-settings>
+  <b:includable id='main'><b:if cond='data:view.isHomepage'><b:if cond='data:content'><data:content/><b:else/><section class='section '><div class='wrap'><div class='section-heading'><div><span class='eyebrow'>Catatan &amp; insight</span><h2>Perspektif untuk langkah baru.</h2><p>Ide, proses, dan pelajaran seputar bisnis dan dunia digital.</p></div><a class='btn' href='/search?max-results=9'>Semua artikel<svg aria-hidden='true' class='icon' fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.7' viewBox='0 0 24 24'><path d='M5 12h14m-6-6 6 6-6 6'/></svg></a></div><div aria-live='polite' data-compa-feed='true' role='status'><p class='feed-status'>Memuat artikel&#8230;</p></div><noscript><a href='/search?max-results=9'>Baca semua artikel</a></noscript></div></section></b:if></b:if></b:includable>
+</b:widget>
+</b:section><b:section id='compaHomeFaq' name='FAQ Beranda' showaddelement='yes'>
+<b:widget id='HTML112' locked='true' title='FAQ Beranda' type='HTML' version='2' visible='true'>
+  <b:widget-settings>
+    <b:widget-setting name='content'/>
+  </b:widget-settings>
+  <b:includable id='main'><b:if cond='data:view.isHomepage'><b:if cond='data:content'><data:content/><b:else/><section class='section '><div class='wrap'><div class='center' style='margin-bottom:35px'><span class='eyebrow'>Pertanyaan umum</span><h2>Mari mulai dengan lebih jelas.</h2><p class='lede'>Beberapa hal yang mungkin ingin Anda ketahui.</p></div><div class='faq-list'><details><summary>Apa saja yang bisa dikerjakan Compa?</summary><p>Mulai dari strategi brand, identitas visual, desain UI/UX, hingga pengembangan website perusahaan. Ruang lingkup disesuaikan dengan kebutuhan setiap proyek.</p></details><details><summary>Apakah bisa mulai dari proyek kecil?</summary><p>Bisa. Kita dapat memulai dari satu kebutuhan paling penting, lalu mengembangkannya secara bertahap sesuai prioritas bisnis.</p></details><details><summary>Bagaimana proses kerja dan estimasi waktunya?</summary><p>Proses dimulai dengan diskusi kebutuhan, proposal, desain, pengembangan, lalu peluncuran. Estimasi waktu diberikan setelah ruang lingkup dan materi proyek disepakati.</p></details><details><summary>Apakah website bisa saya kelola sendiri?</summary><p>Ya. Saat serah terima, pengelola mendapatkan panduan pengisian konten dan penggunaan fitur yang termasuk dalam ruang lingkup proyek.</p></details><details><summary>Bagaimana cara meminta penawaran?</summary><p>Buka halaman Kontak, ceritakan kebutuhan Anda, lalu buat draf email untuk dikirim ke tim perusahaan. Penawaran disusun setelah diskusi awal.</p></details></div></div></section></b:if></b:if></b:includable>
+</b:widget>
+</b:section><b:section id='compaHomeCta' name='Ajakan Kontak Beranda' showaddelement='yes'>
+<b:widget id='HTML113' locked='true' title='Ajakan Kontak Beranda' type='HTML' version='2' visible='true'>
+  <b:widget-settings>
+    <b:widget-setting name='content'/>
+  </b:widget-settings>
+  <b:includable id='main'><b:if cond='data:view.isHomepage'><b:if cond='data:content'><data:content/><b:else/><section class='section '><div class='wrap'><div class='cta'><div><span class='eyebrow'>Mulai percakapan</span><h2>Proyek hebat dimulai dari sebuah halo.</h2><p>Ceritakan ide Anda. Kita cari langkah terbaik untuk mewujudkannya.</p></div><div class='actions'><a class='btn primary' href='/p/kontak.html'>Hubungi kami<svg aria-hidden='true' class='icon' fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.7' viewBox='0 0 24 24'><path d='M5 12h14m-6-6 6 6-6 6'/></svg></a></div></div></div></section></b:if></b:if></b:includable>
+</b:widget>
+</b:section></div>
+<script type='text/javascript'>//<![CDATA[
+/* Spoler v1.0.0 */
+(()=>{'use strict';if(window.__saeInsightReady)return;window.__saeInsightReady=true;const $=(s,r=document)=>r.querySelector(s),all=(s,r=document)=>Array.from(r.querySelectorAll(s));const safe=v=>{try{const u=new URL(v,location.origin);return/^https?:$/.test(u.protocol)?u.href:''}catch{return''}};const esc=v=>String(v||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));const plain=s=>new DOMParser().parseFromString(s||'','text/html').body.textContent.trim();const dateLabel=raw=>{const m=String(raw||'').match(/^(\d{4})-(\d{2})-(\d{2})/);if(!m)return'';const d=new Date(Date.UTC(Number(m[1]),Number(m[2])-1,Number(m[3])));return isNaN(d)?'':d.toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric',timeZone:'UTC'})};const excerpt=e=>{const doc=new DOMParser().parseFromString(e.content?.$t||e.summary?.$t||'','text/html');const p=[...doc.querySelectorAll('p')].find(p=>p.textContent.trim().length>50&&!/^(ilustrasi|foto|image courtesy|sumber)\s*[:：]/i.test(p.textContent.trim()));return(p?.textContent||doc.body.textContent||'').trim().replace(/^(?:ilustrasi|foto|image courtesy|sumber)\s*:[\s\S]*?\)\s*/i,'')};const cfg={};all('.theme-config').forEach(el=>el.textContent.split(/\r?\n/).forEach(line=>{const i=line.indexOf('=');if(i>0)cfg[line.slice(0,i).trim()]=line.slice(i+1).trim()}));const logo=$('.site-header .brand-logo');if(logo)all('[data-footer-brand]').forEach(a=>a.replaceChildren(logo.cloneNode(true)));const toggle=$('.menu-toggle'),nav=$('.site-nav');const menu=(open,restore=false)=>{if(!nav||!toggle)return;nav.classList.toggle('is-open',open);toggle.setAttribute('aria-expanded',String(open));toggle.setAttribute('aria-label',open?'Tutup menu':'Buka menu');if(restore)toggle.focus({preventScroll:true})};toggle?.addEventListener('click',()=>menu(toggle.getAttribute('aria-expanded')!=='true'));document.addEventListener('click',e=>{if(nav?.classList.contains('is-open')&&!e.target.closest('.site-nav,.menu-toggle'))menu(false)});document.addEventListener('keydown',e=>{if(e.key==='Escape'&&nav?.classList.contains('is-open')){e.preventDefault();menu(false,true)}});nav?.addEventListener('click',e=>{if(e.target.closest('a'))menu(false)});nav?.addEventListener('keydown',e=>{if(e.key==='Tab'&&innerWidth<768&&nav.classList.contains('is-open')){const links=all('a,button',nav);if(!e.shiftKey&&e.target===links.at(-1)){e.preventDefault();toggle.focus()}}});toggle?.addEventListener('keydown',e=>{if(e.key==='Tab'&&toggle.getAttribute('aria-expanded')==='true'){e.preventDefault();const links=all('a,button',nav);(e.shiftKey?links.at(-1):links[0])?.focus()}});matchMedia('(min-width:768px)').addEventListener('change',e=>{if(e.matches)menu(false)});$('[data-dismiss-announcement]')?.addEventListener('click',e=>e.currentTarget.closest('.announcement').remove());all('.newsletter-form').forEach(form=>{form.addEventListener('submit',e=>{e.preventDefault();if(!form.reportValidity())return;const status=$('.form-status',form);const url=safe(cfg.newsletter_url||'');if(!url){status.textContent='Newsletter belum diaktifkan. Anda dapat mengikuti artikel melalui RSS.';let link=document.createElement('a');link.href='/feeds/posts/default';link.textContent=' Buka RSS';status.append(link);return}const u=new URL(url);u.searchParams.set(cfg.newsletter_field||'email',$('input[type=email]',form).value);location.href=u.href})});const SOCIAL_PATHS={"instagram":"M7.8,2H16.2C19.4,2 22,4.6 22,7.8V16.2A5.8,5.8 0 0,1 16.2,22H7.8C4.6,22 2,19.4 2,16.2V7.8A5.8,5.8 0 0,1 7.8,2M7.6,4A3.6,3.6 0 0,0 4,7.6V16.4C4,18.39 5.61,20 7.6,20H16.4A3.6,3.6 0 0,0 20,16.4V7.6C20,5.61 18.39,4 16.4,4H7.6M17.25,5.5A1.25,1.25 0 0,1 18.5,6.75A1.25,1.25 0 0,1 17.25,8A1.25,1.25 0 0,1 16,6.75A1.25,1.25 0 0,1 17.25,5.5M12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9Z","linkedin":"M19 3A2 2 0 0 1 21 5V19A2 2 0 0 1 19 21H5A2 2 0 0 1 3 19V5A2 2 0 0 1 5 3H19M18.5 18.5V13.2A3.26 3.26 0 0 0 15.24 9.94C14.39 9.94 13.4 10.46 12.92 11.24V10.13H10.13V18.5H12.92V13.57C12.92 12.8 13.54 12.17 14.31 12.17A1.4 1.4 0 0 1 15.71 13.57V18.5H18.5M6.88 8.56A1.68 1.68 0 0 0 8.56 6.88C8.56 5.95 7.81 5.19 6.88 5.19A1.69 1.69 0 0 0 5.19 6.88C5.19 7.81 5.95 8.56 6.88 8.56M8.27 18.5V10.13H5.5V18.5H8.27Z","twitter":"M22.46,6C21.69,6.35 20.86,6.58 20,6.69C20.88,6.16 21.56,5.32 21.88,4.31C21.05,4.81 20.13,5.16 19.16,5.36C18.37,4.5 17.26,4 16,4C13.65,4 11.73,5.92 11.73,8.29C11.73,8.63 11.77,8.96 11.84,9.27C8.28,9.09 5.11,7.38 3,4.79C2.63,5.42 2.42,6.16 2.42,6.94C2.42,8.43 3.17,9.75 4.33,10.5C3.62,10.5 2.96,10.3 2.38,10C2.38,10 2.38,10 2.38,10.03C2.38,12.11 3.86,13.85 5.82,14.24C5.46,14.34 5.08,14.39 4.69,14.39C4.42,14.39 4.15,14.36 3.89,14.31C4.43,16 6,17.26 7.89,17.29C6.43,18.45 4.58,19.13 2.56,19.13C2.22,19.13 1.88,19.11 1.54,19.07C3.44,20.29 5.7,21 8.12,21C16,21 20.33,14.46 20.33,8.79C20.33,8.6 20.33,8.42 20.32,8.23C21.16,7.63 21.88,6.87 22.46,6Z","facebook":"M12 2.04C6.5 2.04 2 6.53 2 12.06C2 17.06 5.66 21.21 10.44 21.96V14.96H7.9V12.06H10.44V9.85C10.44 7.34 11.93 5.96 14.22 5.96C15.31 5.96 16.45 6.15 16.45 6.15V8.62H15.19C13.95 8.62 13.56 9.39 13.56 10.18V12.06H16.34L15.89 14.96H13.56V21.96A10 10 0 0 0 22 12.06C22 6.53 17.5 2.04 12 2.04Z","youtube":"M10,15L15.19,12L10,9V15M21.56,7.17C21.69,7.64 21.78,8.27 21.84,9.07C21.91,9.87 21.94,10.56 21.94,11.16L22,12C22,14.19 21.84,15.8 21.56,16.83C21.31,17.73 20.73,18.31 19.83,18.56C19.36,18.69 18.5,18.78 17.18,18.84C15.88,18.91 14.69,18.94 13.59,18.94L12,19C7.81,19 5.2,18.84 4.17,18.56C3.27,18.31 2.69,17.73 2.44,16.83C2.31,16.36 2.22,15.73 2.16,14.93C2.09,14.13 2.06,13.44 2.06,12.84L2,12C2,9.81 2.16,8.2 2.44,7.17C2.69,6.27 3.27,5.69 4.17,5.44C4.64,5.31 5.5,5.22 6.82,5.16C8.12,5.09 9.31,5.06 10.41,5.06L12,5C16.19,5 18.8,5.16 19.83,5.44C20.73,5.69 21.31,6.27 21.56,7.17Z","whatsapp":"M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 15 3.8 13.47 3.8 11.91C3.81 7.37 7.5 3.67 12.05 3.67M8.53 7.33C8.37 7.33 8.1 7.39 7.87 7.64C7.65 7.89 7 8.5 7 9.71C7 10.93 7.89 12.1 8 12.27C8.14 12.44 9.76 14.94 12.25 16C12.84 16.27 13.3 16.42 13.66 16.53C14.25 16.72 14.79 16.69 15.22 16.63C15.7 16.56 16.68 16.03 16.89 15.45C17.1 14.87 17.1 14.38 17.04 14.27C16.97 14.17 16.81 14.11 16.56 14C16.31 13.86 15.09 13.26 14.87 13.18C14.64 13.1 14.5 13.06 14.31 13.3C14.15 13.55 13.67 14.11 13.53 14.27C13.38 14.44 13.24 14.46 13 14.34C12.74 14.21 11.94 13.95 11 13.11C10.26 12.45 9.77 11.64 9.62 11.39C9.5 11.15 9.61 11 9.73 10.89C9.84 10.78 10 10.6 10.1 10.45C10.23 10.31 10.27 10.2 10.35 10.04C10.43 9.87 10.39 9.73 10.33 9.61C10.27 9.5 9.77 8.26 9.56 7.77C9.36 7.29 9.16 7.35 9 7.34C8.86 7.34 8.7 7.33 8.53 7.33Z","arrow-left":"M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z","arrow-right":"M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z"};const resize=(s,w=800)=>{try{const u=new URL(s);if(u.hostname==='images.unsplash.com'){u.searchParams.set('auto','format');u.searchParams.set('fit','crop');u.searchParams.set('w',String(w));u.searchParams.set('q','75')}else if(/(^|\.)(blogger\.googleusercontent\.com|\d+\.bp\.blogspot\.com|lh\d+\.googleusercontent\.com)$/.test(u.hostname)){u.pathname=u.pathname.replace(/\/s\d+(-[^/]*)?\//,'/s'+w+'/').replace(/\/w\d+-h\d+(-[^/]*)?\//,'/w'+w+'/');if(u.pathname.includes('/blogger_img_proxy/'))u.pathname=u.pathname.replace(/=w\d+[^/]*$/,'=w'+w+'-h'+Math.round(w*2/3)+'-p-k-no-nu')}return u.href}catch{return''}};const image=e=>{let src=e.media$thumbnail?.url||'';if(!src)src=new DOMParser().parseFromString(e.content?.$t||'','text/html').querySelector('img')?.getAttribute('src')||'';return src?safe(src):''};const entryURL=e=>safe((e.link||[]).find(l=>l.rel==='alternate')?.href||'');const outline=(d)=>`<svg class="icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="${d}"></path></svg>`;const commentIcon=outline('M21 11.5a8.4 8.4 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.4 8.4 0 0 1 3.8-.9H13a8.5 8.5 0 0 1 8 8v.5Z');const shareIcon=outline('M18 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM6 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm12 7a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM8.6 10.5l6.8-4M8.6 13.5l6.8 4');const copyIcon=outline('M9 9h11v11H9zM5 15H3V3h12v2');const networks=[['whatsapp','WhatsApp'],['facebook','Facebook'],['x','X'],['telegram','Telegram'],['linkedin','LinkedIn']];const socialIcon=key=>key==='x'?outline('M4 3h4l12 18h-4L4 3ZM20 3 4 21'):key==='telegram'?outline('m22 3-7 18-4-8-9-4 20-6ZM11 13 22 3'):`<svg class="icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="${SOCIAL_PATHS[key]||''}"></path></svg>`;const shareURL=(key,raw,title)=>{const url=encodeURIComponent(raw),text=encodeURIComponent(title);return key==='whatsapp'?'https://api.whatsapp.com/send?text='+text+'%20'+url:key==='facebook'?'https://www.facebook.com/sharer/sharer.php?u='+url:key==='x'?'https://x.com/intent/tweet?url='+url+'&text='+text:key==='telegram'?'https://t.me/share/url?url='+url+'&text='+text:'https://www.linkedin.com/sharing/share-offsite/?url='+url};function cardActions(url,title,count=0){const n=Math.max(0,Number(count)||0);return`<div class="card-actions"><a class="comment-link" href="${esc(url)}#comments" aria-label="Lihat ${n} komentar: ${esc(title)}">${commentIcon}<span>${n} komentar</span></a><details class="card-share"><summary aria-label="Bagikan artikel: ${esc(title)}">${shareIcon}<span>Bagikan</span></summary><div class="share-popover"><p>Bagikan artikel</p>${networks.map(([k,label])=>`<a href="${esc(shareURL(k,url,title))}"target="_blank"rel="noopener noreferrer">${socialIcon(k)}<span>${label}</span></a>`).join('')}<button type="button" data-copy-url="${esc(url)}">${copyIcon}<span>Salin tautan</span></button></div></details></div>`}
+all('[data-card-actions]').forEach(host=>{const card=host.closest('.blog-card'),url=safe(card?.dataset.postUrl||'');if(url)host.outerHTML=cardActions(url,$('.card-title a',card)?.textContent||document.title,host.dataset.comments)});document.addEventListener('click',async e=>{all('.card-share[open]').forEach(d=>{if(!d.contains(e.target))d.open=false});const summary=e.target.closest('.card-share summary');if(summary)all('.card-share[open]').forEach(d=>{if(d!==summary.parentElement)d.open=false});const btn=e.target.closest('[data-copy-url]');if(!btn)return;const label=$('span',btn);try{await navigator.clipboard.writeText(btn.dataset.copyUrl);label.textContent='Tautan tersalin';setTimeout(()=>label.textContent='Salin tautan',2000)}catch{label.textContent='Buka artikel untuk menyalin'}});document.addEventListener('keydown',e=>{if(e.key==='Escape')all('.card-share[open]').forEach(d=>{d.open=false;$('summary',d)?.focus()})});function card(e,variant='normal'){const url=entryURL(e);if(!url)return null;const title=e.title?.$t||'Artikel',src=image(e),labels=(e.category||[]).slice(0,3),date=new Date(e.published?.$t),stamp=dateLabel(e.published?.$t),author=e.author?.[0]?.name?.$t||'';const el=document.createElement('article');el.className='blog-card';el.dataset.postUrl=url;const photo=`<a class="card-photo" href="${esc(url)}" tabindex="-1" aria-hidden="true">${src?`<img alt="${esc(title)}"src="${esc(resize(src,800))}"srcset="${[480,800,1200].map(w=>esc(resize(src,w))+' '+w+'w').join(',')}"sizes="(min-width:1280px) 384px, (min-width:768px) 45vw, 100vw"width="900"height="600"loading="lazy"decoding="async"/>`:''}</a>`;const heading=`<h2 class="card-title"><a href="${esc(url)}">${esc(title)}</a></h2><p class="card-excerpt">${esc(excerpt(e).slice(0,170))}</p>`;const meta=`<p class="card-meta">${esc(author)}${author&&stamp?' • ':''}${esc(stamp)}</p>`;if(variant==='related'){const avatar=safe(e.author?.[0]?.gd$image?.src||''),words=plain(e.content?.$t||'').split(/\s+/).length;el.innerHTML=photo+`<div class="card-copy"><div class="post-badge"><a href="/search/label/${encodeURIComponent(labels[0]?.term||'')}">${esc(labels[0]?.term||'Artikel')}</a><span>${Math.max(1,Math.ceil(words/220))} min read</span></div>`+heading+`<div class="related-author">${avatar?`<img src="${esc(avatar)}"width="40"height="40"alt=""loading="lazy"/>`:`<span class="author-initial"aria-hidden="true">${esc(author.slice(0,1).toUpperCase())}</span>`}<div><strong>${esc(author)}</strong><time>${esc(stamp)}</time></div></div></div>`}else el.innerHTML=photo+`<div class="card-copy">`+meta+heading+`<div class="tags">${labels.map(l=>`<a class="tag"href="/search/label/${encodeURIComponent(l.term)}">${esc(l.term)}</a>`).join('')}</div></div>`;$('.card-copy',el).insertAdjacentHTML('beforeend',cardActions(url,title,e.thr$total?.$t));all('img',el).forEach(img=>img.addEventListener('error',()=>{img.hidden=true},{once:true}));const tones=[['#f9f5ff','#6941c6','#e9d7fe'],['#f0f9ff','#026aa2','#b9e6fe'],['#fdf2fa','#c11574','#fcceee'],['#ecfdf3','#027a48','#abefc6'],['#eef4ff','#3538cd','#c7d7fe'],['#fffaeb','#b54708','#fedf89']];const named={news:0,bisnis:1,showbiz:2,bola:3,lifestyle:2,kesehatan:3,tekno:4,otomotif:5,regional:1};all('.tags .tag',el).forEach(a=>{const name=a.textContent.toLowerCase(),idx=named[name]??([...name].reduce((n,c)=>n+c.charCodeAt(0),0)%tones.length),t=tones[idx];a.style.setProperty('--tag-bg',t[0]);a.style.setProperty('--tag-color',t[1]);a.style.setProperty('--tag-border',t[2])});return el}
+const cached=new Map(),feedTotals=new Map();async function fetchJSON(path){const ctl=new AbortController(),timer=setTimeout(()=>ctl.abort(),10000);try{const r=await fetch(path,{credentials:'omit',signal:ctl.signal});if(!r.ok)throw Error('HTTP '+r.status);const d=await r.json();if(!d.feed)throw Error('Feed tidak valid');return d.feed}finally{clearTimeout(timer)}}
+async function entries(label,count,start=1,needImages=true){const filter=label&&label!=='recent'?'/-/'+encodeURIComponent(label):'',tail=`${filter}?alt=json&orderby=published&max-results=${count}&start-index=${start}`,key=label+'|'+count+'|'+start+'|'+needImages;if(cached.has(key))return cached.get(key);const promise=(async()=>{const feed=await fetchJSON('/feeds/posts/summary'+tail);feedTotals.set(label,Number(feed.openSearch$totalResults?.$t)||0);let list=feed.entry||[];if(needImages&&list.some(e=>!image(e))){try{const full=await fetchJSON('/feeds/posts/default'+tail);const map=new Map((full.entry||[]).map(e=>[e.id?.$t,e]));list.forEach(e=>{const f=map.get(e.id?.$t);if(f)e.content=f.content})}catch{}}return list})();cached.set(key,promise);try{return await promise}catch(e){cached.delete(key);throw e}}
+const[labelRaw,countRaw]=($('.feed-config')?.textContent.trim()||'recent|7').split('|');const mainLabel=labelRaw?.trim()||'recent',mainCount=Math.max(1,Math.min(30,Number(countRaw)||7));const currentPage=Math.max(1,Math.min(10000,Number(new URLSearchParams(location.search).get('page'))||1));function pagination(total){const nav=$('.home-page .pagination');if(!nav)return;const pages=Math.max(1,Math.ceil(total/mainCount)),page=Math.min(currentPage,pages),url=p=>p===1?'/':'/?page='+p;const svgLeft='<svg class="icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M19 12H5m6-6-6 6 6 6"></path></svg>',svgRight='<svg class="icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M5 12h14m-6-6 6 6-6 6"></path></svg>';const seq=pages<=7?Array.from({length:pages},(_,i)=>i+1):page<5?[1,2,3,4,5,'…',pages]:page>pages-4?[1,'…',pages-4,pages-3,pages-2,pages-1,pages]:[1,'…',page-1,page,page+1,'…',pages];const side=(p,disabled,content,aria)=>disabled?`<button class="btn" type="button" disabled aria-label="${aria}">${content}</button>`:`<a class="btn" href="${url(p)}" aria-label="${aria}">${content}</a>`;nav.innerHTML=side(page-1,page===1,svgLeft+'<span class="page-word">Previous</span>','Previous Page')+`<div class="page-numbers">${seq.map(n=>n==='…'?'<span class="page-ellipsis">…</span>':`<a href="${url(n)}"class="${n===page?'current':''}"${n===page?'aria-current="page"':''}>${n}</a>`).join('')}</div><span class="mobile-page-count">Page ${page} of ${pages}</span>`+side(page+1,page===pages,'<span class="page-word">Next</span>'+svgRight,'Next Page')}
+function enhanceNative(host,list){const cards=all(':scope > .blog-card',host);if(cards.length!==list.length||!list.every((e,i)=>new URL(entryURL(e)).pathname===new URL(cards[i].dataset.postUrl,location.href).pathname))return false;cards.forEach((node,i)=>{const e=list[i],p=$('.card-excerpt',node),meta=$('.card-meta',node),author=e.author?.[0]?.name?.$t||'',stamp=dateLabel(e.published?.$t);if(p)p.textContent=excerpt(e).slice(0,170);if(meta)meta.textContent=author+(author&&stamp?' • ':'')+stamp;const action=$('.card-actions',node);if(action)action.outerHTML=cardActions(entryURL(e),e.title?.$t||'',e.thr$total?.$t)});host.dataset.hydrated='true';return true}
+function loadFeed(host){const run=async()=>{const type=host.dataset.feed,count=type==='home'?mainCount:type==='related'?3:4,label=type==='home'?mainLabel:'recent',native=type==='home'&&currentPage===1&&all(':scope > .blog-card .card-photo img',host).length===count;host.setAttribute('aria-busy','true');try{let list=await entries(label,count,type==='home'?(currentPage-1)*mainCount+1:1,!native);if(type==='related')list=list.filter(e=>new URL(entryURL(e)).pathname!==location.pathname).slice(0,2);if(list.length){if(type==='home')pagination(feedTotals.get(label)||list.length);if(!native||!enhanceNative(host,list)){const nodes=list.map(e=>card(e,type==='related'?'related':'normal')).filter(Boolean);if(nodes.length)host.replaceChildren(...nodes)}}else if(!host.querySelector('.blog-card')){const msg=document.createElement('p');msg.className='feed-status';msg.textContent=label==='recent'?'Belum ada artikel yang diterbitkan.':'Belum ada artikel pada kategori ini.';host.replaceChildren(msg)}}catch{if(!host.querySelector('.blog-card')){const msg=document.createElement('div');msg.className='feed-status';msg.textContent='Artikel belum dapat dimuat. ';const retry=document.createElement('button');retry.className='btn small';retry.type='button';retry.textContent='Coba lagi';retry.addEventListener('click',run);msg.append(retry);const a=document.createElement('a');a.href='/search?max-results=7';a.textContent=' Buka arsip';msg.append(a);host.replaceChildren(msg)}}finally{host.setAttribute('aria-busy','false');host.dispatchEvent(new Event('feedready'))}};run()}
+const feedObserver='IntersectionObserver'in window?new IntersectionObserver(items=>items.forEach(item=>{if(item.isIntersecting){feedObserver.unobserve(item.target);loadFeed(item.target)}}),{rootMargin:'400px 0px'}):null;all('[data-feed]').forEach(host=>{if(host.dataset.feed==='home'||!feedObserver)loadFeed(host);else feedObserver.observe(host)});all('[data-carousel]').forEach(root=>{const track=$('.carousel-track',root),prev=$('[data-slide-prev]',root),next=$('[data-slide-next]',root);if(!track)return;const update=()=>{if(prev)prev.disabled=track.scrollLeft<4;if(next)next.disabled=track.scrollLeft+track.clientWidth>=track.scrollWidth-4};const slide=dir=>track.scrollBy({left:dir*(track.firstElementChild?.getBoundingClientRect().width+32||track.clientWidth),behavior:matchMedia('(prefers-reduced-motion:reduce)').matches?'instant':'smooth'});prev?.addEventListener('click',()=>slide(-1));next?.addEventListener('click',()=>slide(1));track.addEventListener('scroll',update,{passive:true});track.addEventListener('feedready',update);new ResizeObserver(update).observe(track);update()});const post=$('.post-body[data-article-body]');if(post){const firstImg=$('img',post);let cover=$('.post-cover');if(firstImg){if(cover){if(!cover.getAttribute('src'))cover.src=resize(firstImg.currentSrc||firstImg.src,1440);cover.alt=firstImg.alt||$('.post-intro h1')?.textContent||'';cover.hidden=false}else{cover=firstImg.cloneNode(true);cover.className='post-cover';cover.loading='eager';cover.fetchPriority='high';cover.decoding='async';$('.post-intro .wrap').insertBefore(cover,$('.post-meta'))}const parent=firstImg.closest('.separator,figure,.tr-caption-container');if(parent&&plain(parent.textContent).length<80)parent.remove();else firstImg.remove();const credit=all('p',post).find(p=>/^(ilustrasi|foto|image courtesy)\s*[:：]/i.test(p.textContent.trim()));if(credit){credit.classList.add('post-cover-credit');cover.after(credit)}}
+const words=post.textContent.trim().split(/\s+/).length;const read=$('[data-reading-time]');if(read)read.textContent=Math.max(1,Math.ceil(words/220))+' min read';}
+all('[data-post-date]').forEach(t=>{const label=dateLabel(t.getAttribute('datetime'));if(label)t.textContent=label});all('[data-filter]').forEach(btn=>btn.addEventListener('click',()=>{const group=btn.closest('[data-portfolio]');all('[data-filter]',group).forEach(b=>b.setAttribute('aria-pressed',String(b===btn)));all('[data-project]',group).forEach(c=>{c.hidden=btn.dataset.filter!=='all'&&c.dataset.project!==btn.dataset.filter})}));all('[data-contact-email]').forEach(el=>{if(cfg.email){el.textContent=cfg.email;el.href='mailto:'+cfg.email}});all('[data-contact-address]').forEach(el=>{if(cfg.alamat)el.textContent=cfg.alamat});const contact=$('[data-contact-form]');if(contact){const status=$('[data-form-result]',contact),recipient=cfg.email||'',submit=$('button[type=submit]',contact);if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(recipient)){if(submit)submit.disabled=true;if(status)status.textContent='Alamat email perusahaan belum diatur.'}contact.addEventListener('submit',e=>{e.preventDefault();if(!contact.reportValidity()||!recipient)return;const d=new FormData(contact),body='Nama: '+d.get('nama')+'\nEmail: '+d.get('email')+'\nPerusahaan: '+d.get('perusahaan')+'\nLayanan: '+d.get('layanan')+'\n\n'+d.get('pesan');location.href='mailto:'+encodeURIComponent(recipient)+'?subject='+encodeURIComponent('Konsultasi proyek — '+d.get('nama'))+'&body='+encodeURIComponent(body);if(status)status.textContent='Periksa dan kirim draf melalui aplikasi email Anda.'})}
+all('.social a').forEach(a=>{let key=/instagram/i.test(a.href)?'instagram':/linkedin/i.test(a.href)?'linkedin':/facebook/i.test(a.href)?'facebook':/youtube/i.test(a.href)?'youtube':/whatsapp|wa.me/i.test(a.href)?'whatsapp':/twitter|x.com/i.test(a.href)?'twitter':'';if(key&&SOCIAL_PATHS[key]){a.setAttribute('aria-label',a.textContent.replace('↗','').trim());a.innerHTML='<svg aria-hidden="true" viewBox="0 0 24 24"><path d="'+SOCIAL_PATHS[key]+'"></path></svg>'}});const review=$('.testimonial');if(review){const data=[{image:'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1000&q=85',quote:'A fresh perspective can open a world of possibilities.',name:'Creative perspectives',role:'Ideas, design, and technology',detail:'Discover something new every day.'},{image:'https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1000&q=85',quote:'Every new chapter begins with an idea worth sharing.',name:'Build what comes next',role:'Resources for curious minds',detail:'One idea. A new possibility.'}];let index=0;all('[data-review-step]',review).forEach(b=>b.addEventListener('click',()=>{index=(index+Number(b.dataset.reviewStep)+data.length)%data.length;const d=data[index];$('img',review).src=d.image;$('blockquote',review).textContent=d.quote;$('.review-name',review).textContent=d.name;$('.review-role',review).textContent=d.role;$('.review-detail',review).textContent=d.detail}))}
+const articleShares=$('.single-article .share-links');if(articleShares){const url=location.origin+location.pathname,title=$('.post-intro h1')?.textContent||document.title;articleShares.innerHTML=`<span class="share-label">Bagikan artikel</span>${networks.map(([k,label])=>`<a class="btn social-share"href="${esc(shareURL(k,url,title))}"target="_blank"rel="noopener noreferrer"aria-label="Bagikan ke ${label}"title="${label}">${socialIcon(k)}</a>`).join('')}<button class="btn share-copy" type="button" data-copy-url="${esc(url)}">${copyIcon}<span>Salin tautan</span></button>`;}})();
+//]]></script><!-- TB:NEWS_INDEX:SCRIPT:START -->
+<script type='text/javascript'>//<![CDATA[
+/* TemaBlogger shared News Index v1.0.0. Pictogrammers MDI paths: Apache 2.0. */
+(function(global){
+'use strict';
+const iconPaths={"calendar-month-outline":["M7 11H9V13H7V11M21 5V19C21 20.11 20.11 21 19 21H5C3.89 21 3 20.1 3 19V5C3 3.9 3.9 3 5 3H6V1H8V3H16V1H18V3H19C20.11 3 21 3.9 21 5M5 7H19V5H5V7M19 19V9H5V19H19M15 13V11H17V13H15M11 13V11H13V13H11M7 15H9V17H7V15M15 17V15H17V17H15M11 17V15H13V17H11Z"],"filter-variant":["M6,13H18V11H6M3,6V8H21V6M10,18H14V16H10V18Z"],"newspaper-variant-outline":["M20 5L20 19L4 19L4 5H20M20 3H4C2.89 3 2 3.89 2 5V19C2 20.11 2.89 21 4 21H20C21.11 21 22 20.11 22 19V5C22 3.89 21.11 3 20 3M18 15H6V17H18V15M10 7H6V13H10V7M12 9H18V7H12V9M18 11H12V13H18V11Z"],"chevron-right":["M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z"],"chevron-down":["M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"]};
+const esc=value=>String(value==null?'':value).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const icon=name=>'<svg class="tbni-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false" data-icon="mdi:'+esc(name)+'">'+(iconPaths[name]||[]).map(d=>'<path d="'+esc(d)+'"></path>').join('')+'</svg>';
+function safeURL(value,base){if(!String(value||'').trim())return '';try{const u=new URL(value,base);return /^https?:$/.test(u.protocol)?u.href:'';}catch(e){return '';}}
+function validDate(value){if(!/^\d{4}-\d{2}-\d{2}$/.test(value||''))return '';const d=new Date(value+'T00:00:00Z');return Number.isFinite(d.getTime())&&d.toISOString().slice(0,10)===value?value:'';}
+function dayBounds(value,offset='+07:00'){
+ const day=validDate(value);if(!day)return null;
+ if(!/^[+-](?:0\d|1[0-4]):[0-5]\d$/.test(offset))throw Error('Invalid news index date offset');
+ return {min:day+'T00:00:00'+offset,max:day+'T23:59:59.999'+offset};
+}
+function isIndexRoute(url){
+ const u=new URL(url),p=u.searchParams;
+ return u.pathname.replace(/\/$/,'')==='/search'&&(p.get('view')==='index'||(!p.has('q')&&!['updated-max','updated-min','max-results','start'].some(k=>p.has(k))));
+}
+function feedURL(origin,filters,start=1,size=20,full=false,offset='+07:00'){
+ const label=String(filters.label||'').trim(),u=new URL('/feeds/posts/'+(full?'default':'summary')+(label?'/-/'+encodeURIComponent(label):''),origin);
+ u.searchParams.set('alt','json');u.searchParams.set('orderby','published');u.searchParams.set('max-results',String(size));u.searchParams.set('start-index',String(start));
+ const bounds=dayBounds(filters.date,offset);if(bounds){u.searchParams.set('published-min',bounds.min);u.searchParams.set('published-max',bounds.max);}
+ return u;
+}
+function dateKey(value,timeZone='Asia/Jakarta'){
+ const d=new Date(value);if(!Number.isFinite(d.getTime()))return '';
+ const parts=new Intl.DateTimeFormat('en-CA',{timeZone,year:'numeric',month:'2-digit',day:'2-digit'}).formatToParts(d),get=name=>parts.find(p=>p.type===name)?.value;
+ return [get('year'),get('month'),get('day')].join('-');
+}
+function imageURL(value,origin){const safe=safeURL(value,origin);if(!safe)return '';const u=new URL(safe);if(/(^|\.)(blogger\.googleusercontent\.com|blogspot\.com|googleusercontent\.com|ggpht\.com)$/.test(u.hostname))u.pathname=u.pathname.replace(/\/(s\d+|w\d+(?:-h\d+)?)(?:-[^/]*)?\//,'/w320-h200-p-k-no-nu/');return u.href;}
+function mount(root,options={}){
+ if(!root||root.dataset.tbniReady||!isIndexRoute(location.href))return null;
+ const cfg={timeZone:'Asia/Jakarta',dateOffset:'+07:00',timeLabel:'WIB',pageSize:20,labels:[],...options};
+ const labels=[...new Set(cfg.labels.map(l=>String(l).trim()).filter(Boolean))].sort((a,b)=>a.localeCompare(b,'id'));
+ const $=selector=>root.querySelector(selector),$$=selector=>Array.from(root.querySelectorAll(selector));
+ const prettyDay=key=>new Intl.DateTimeFormat('id-ID',{timeZone:'UTC',weekday:'long',day:'numeric',month:'long',year:'numeric'}).format(new Date(key+'T12:00:00Z'));
+ root.classList.add('tbni');root.dataset.tbniReady='yes';
+ root.innerHTML='<nav class="tbni-breadcrumb" aria-label="Jejak navigasi"><a href="/">Beranda</a>'+icon('chevron-right')+'<span>Indeks Berita</span></nav>'+
+ '<header><h1 class="tbni-heading">Indeks Berita</h1><p class="tbni-intro">Temukan berita yang Anda cari. Telusuri kabar terbaru berdasarkan tanggal dan kanal pilihan.</p></header>'+
+ '<form class="tbni-form"><label class="tbni-field"><span>Tanggal terbit</span><div class="tbni-control">'+icon('calendar-month-outline')+'<input type="date" name="tanggal" aria-label="Tanggal terbit"/></div></label>'+
+ '<label class="tbni-field"><span>Kanal berita</span><div class="tbni-control">'+icon('newspaper-variant-outline')+'<select name="kanal" aria-label="Kanal berita"><option value="">Semua kanal</option>'+labels.map(l=>'<option value="'+esc(l)+'">'+esc(l)+'</option>').join('')+'</select></div></label>'+
+ '<button class="tbni-submit" type="submit">'+icon('filter-variant')+'Tampilkan</button></form>'+
+ '<div class="tbni-channels" role="group" aria-label="Pilih kanal">'+['',...labels].map(l=>'<button type="button" class="tbni-chip" data-channel="'+esc(l)+'" aria-pressed="false">'+esc(l||'Semua kanal')+'</button>').join('')+'</div>'+
+ '<div class="tbni-summary"><div><p class="tbni-count" role="status" aria-live="polite"></p><p class="tbni-context"></p></div><button class="tbni-reset" type="button">Reset filter</button></div>'+
+ '<div class="tbni-notices"></div><div class="tbni-results" aria-busy="false"></div><div class="tbni-more-area"><p class="tbni-progress" role="status"></p><button class="tbni-more" type="button">Muat berita lainnya '+icon('chevron-down')+'</button></div>';
+ const form=$('.tbni-form'),dateInput=$('input[name=tanggal]'),channelInput=$('select[name=kanal]'),results=$('.tbni-results'),more=$('.tbni-more');
+ let sequence=0,controller=null,next=1,total=null,loaded=0,activeFilters={date:'',label:''},hasMore=false;
+ const seen=new Set(),groups=new Map();
+ const readURL=()=>{const p=new URL(location.href).searchParams;dateInput.value=validDate(p.get('tanggal'));const label=p.get('kanal')||'';if(label&&!labels.includes(label)&&!Array.from(channelInput.options).some(o=>o.value===label)){const option=document.createElement('option');option.value=label;option.textContent=label;channelInput.add(option);}channelInput.value=label;};
+ function updateURL(){const u=new URL(location.href);u.searchParams.set('view','index');for(const [name,value] of [['tanggal',dateInput.value],['kanal',channelInput.value]]){if(value)u.searchParams.set(name,value);else u.searchParams.delete(name);}if(u.href!==location.href)history.pushState(null,'',u);}
+ function filterContext(){const date=activeFilters.date?prettyDay(activeFilters.date):'Semua tanggal',label=activeFilters.label||'Semua kanal';$('.tbni-context').textContent=date+' · '+label+' · '+cfg.timeLabel;$$('.tbni-chip').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.channel===activeFilters.label)));}
+ function notice(title,message,retry=false){$('.tbni-notices').innerHTML='<div class="tbni-notice"'+(retry?' role="alert"':'')+'>'+icon('newspaper-variant-outline')+'<h2>'+esc(title)+'</h2><p>'+esc(message)+'</p>'+(retry?'<button type="button" class="tbni-retry">Coba lagi</button>':'<button type="button" class="tbni-retry">Lihat semua berita</button>')+'<a class="tbni-native-link" href="/search?max-results=20">Buka arsip biasa</a></div>';$('.tbni-retry').addEventListener('click',()=>{if(retry)load(loaded===0);else reset();});}
+ function normalize(entry){
+  const url=safeURL(entry.link?.find(l=>l.rel==='alternate')?.href||'',location.origin),published=entry.published?.$t||'';if(!url||!dateKey(published,cfg.timeZone))return null;
+  let image=entry.media$thumbnail?.url||'';if(!image){const doc=new DOMParser().parseFromString(entry.content?.$t||entry.summary?.$t||'','text/html');image=doc.querySelector('img')?.getAttribute('src')||'';}
+  return {id:entry.id?.$t||new URL(url).pathname,url,title:entry.title?.$t||'Tanpa judul',published,label:activeFilters.label||entry.category?.[0]?.term||'Berita',image:imageURL(image,location.origin)};
+ }
+ function append(post){
+  if(seen.has(post.id))return;seen.add(post.id);const day=dateKey(post.published,cfg.timeZone);let list=groups.get(day);
+  if(!list){const section=document.createElement('section');section.className='tbni-day';section.dataset.date=day;section.innerHTML='<h2 class="tbni-date">'+icon('calendar-month-outline')+esc(prettyDay(day))+'</h2><div class="tbni-day-list"></div>';results.append(section);list=section.lastElementChild;groups.set(day,list);}
+  const time=new Intl.DateTimeFormat('id-ID',{timeZone:cfg.timeZone,hour:'2-digit',minute:'2-digit',hourCycle:'h23'}).format(new Date(post.published)).replace('.',':');
+  const row=document.createElement('article');row.className='tbni-row';row.dataset.postId=post.id;
+  row.innerHTML='<time class="tbni-time" datetime="'+esc(post.published)+'">'+esc(time)+'<small>'+esc(cfg.timeLabel)+'</small></time><div class="tbni-copy"><a class="tbni-category" href="/search/label/'+encodeURIComponent(post.label)+'">'+esc(post.label)+'</a><h3 class="tbni-title"><a href="'+esc(post.url)+'">'+esc(post.title)+'</a></h3></div><a class="tbni-photo" href="'+esc(post.url)+'" aria-label="'+esc(post.title)+'" tabindex="-1">'+(post.image?'<img src="'+esc(post.image)+'" width="320" height="200" loading="lazy" decoding="async" alt=""/>':icon('newspaper-variant-outline'))+'</a>';
+  list.append(row);loaded++;
+ }
+ async function load(restart=false){
+  const run=++sequence;controller?.abort();controller=new AbortController();const currentController=controller,timer=setTimeout(()=>currentController.abort(),12000);
+  if(restart){next=1;total=null;loaded=0;seen.clear();groups.clear();activeFilters={date:validDate(dateInput.value),label:channelInput.value.trim()};results.innerHTML='<div class="tbni-loading" aria-hidden="true"><div class="tbni-ghost"></div><div class="tbni-ghost"></div><div class="tbni-ghost"></div></div>';$('.tbni-count').textContent='Memuat berita…';filterContext();}
+  $('.tbni-notices').innerHTML='';results.setAttribute('aria-busy','true');more.disabled=true;more.hidden=restart;$('.tbni-progress').textContent=restart?'':'Memuat berita berikutnya…';
+  const get=async full=>{const response=await fetch(feedURL(location.origin,activeFilters,next,cfg.pageSize,full,cfg.dateOffset),{signal:currentController.signal});if(!response.ok)throw Error('Feed unavailable');const data=await response.json();if(!data.feed)throw Error('Invalid feed');return data.feed;};
+  try{
+   const data=await get(false);if(run!==sequence)return;const raw=data.entry||[];let posts=raw.map(normalize).filter(Boolean);
+   if(posts.some(p=>!p.image)){try{const full=await get(true),images=new Map((full.entry||[]).map(normalize).filter(Boolean).map(p=>[p.id,p.image]));posts=posts.map(p=>p.image?p:{...p,image:images.get(p.id)||''});}catch(e){if(run!==sequence)return;}}
+   if(run!==sequence)return;
+   if(restart)results.innerHTML='';
+   total=Number.parseInt(data.openSearch$totalResults?.$t,10);if(!Number.isFinite(total)||total<0)total=null;
+   posts.forEach(append);next+=raw.length;hasMore=raw.length>0&&(total===null?raw.length===cfg.pageSize:next<=total);
+   $('.tbni-count').textContent=total===null?loaded+' berita ditampilkan':total.toLocaleString('id-ID')+' berita ditemukan';
+   $('.tbni-progress').textContent=loaded?'Menampilkan '+loaded.toLocaleString('id-ID')+(total===null?'':' dari '+total.toLocaleString('id-ID'))+' berita'+(hasMore?'':' · Anda sudah sampai di akhir daftar.'):'';
+   more.hidden=!hasMore;
+   if(!loaded)notice('Belum ada berita yang cocok','Coba tanggal atau kanal lain untuk menemukan berita yang Anda cari.');
+  }catch(e){if(run!==sequence)return;if(restart)results.innerHTML='';$('.tbni-count').textContent=loaded?loaded+' berita ditampilkan':'Berita belum dapat dimuat';$('.tbni-progress').textContent='';notice('Berita belum dapat dimuat','Silakan coba lagi. Pilihan tanggal dan kanal Anda tetap tersimpan.',true);more.hidden=true;
+  }finally{clearTimeout(timer);if(run===sequence){results.setAttribute('aria-busy','false');more.disabled=false;}}
+ }
+ function apply(){if(!form.reportValidity())return;updateURL();load(true);}
+ function reset(){dateInput.value='';channelInput.value='';apply();}
+ form.addEventListener('submit',e=>{e.preventDefault();apply();});$('.tbni-reset').addEventListener('click',reset);more.addEventListener('click',()=>load(false));
+ $$('.tbni-chip').forEach(b=>b.addEventListener('click',()=>{channelInput.value=b.dataset.channel;apply();}));
+ root.addEventListener('error',e=>{if(e.target.tagName==='IMG'&&e.target.closest('.tbni-photo'))e.target.closest('.tbni-photo').innerHTML=icon('newspaper-variant-outline');},true);
+ addEventListener('popstate',()=>{readURL();load(true);});
+ readURL();root.hidden=false;document.documentElement.classList.add('has-tb-news-index');load(true);
+ return {reload:()=>load(true),reset};
+}
+const api={version:'1.0.0',mount,dayBounds,dateKey,feedURL,isIndexRoute,imageURL};
+if(typeof module==='object'&&module.exports)module.exports=api;else global.TBNewsIndex=api;
+})(typeof window==='undefined'?{}:window);
+/* TemaBlogger automatic News Index adapter v1.0.0 */
+(function(){
+ 'use strict';
+ const cfg={"timeZone":"Asia/Jakarta","dateOffset":"+07:00","timeLabel":"WIB","pageSize":20,"labelsSelector":"a[href*=\"/search/label/\"]","accent":"","ink":""};
+ function start(){
+  const root=document.querySelector('[data-tb-news-index]');
+  if(!root||!window.TBNewsIndex)return;
+  try{
+   new Intl.DateTimeFormat('id-ID',{timeZone:cfg.timeZone}).format(new Date());
+   const labels=Array.from(document.querySelectorAll(cfg.labelsSelector)).map(a=>{
+    try{const u=new URL(a.getAttribute('href'),location.origin),prefix='/search/label/';
+     return u.origin===location.origin&&u.pathname.startsWith(prefix)?decodeURIComponent(u.pathname.slice(prefix.length)):'';
+    }catch(e){return '';}
+   }).filter(Boolean);
+   if(cfg.accent)root.style.setProperty('--tbni-accent',cfg.accent);
+   if(cfg.ink)root.style.setProperty('--tbni-ink',cfg.ink);
+   window.TBNewsIndex.mount(root,{labels,timeZone:cfg.timeZone,dateOffset:cfg.dateOffset,timeLabel:cfg.timeLabel,pageSize:cfg.pageSize});
+  }catch(error){
+   root.hidden=true;document.documentElement.classList.remove('has-tb-news-index');
+   console.warn('TemaBlogger: indeks belum dapat disiapkan; arsip native tetap tersedia.',error);
+  }
+ }
+ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',start,{once:true});else start();
+})();
+
+//]]></script>
+<!-- TB:NEWS_INDEX:SCRIPT:END -->
+</body></html>

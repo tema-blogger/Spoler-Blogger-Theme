@@ -1,0 +1,37 @@
+SPOLER v1.0.0 — TEMPLATE BLOGGER GRATIS
+
+PEMASANGAN
+1. Cadangkan tema lama: Blogger > Tema > menu tindakan > Cadangan.
+2. Ekstrak ZIP, pilih Spoler-v1.0.0.xml.
+3. Blogger > Tema > Pulihkan > Upload file XML.
+4. Periksa beranda, artikel, menu ponsel, pencarian dan komentar.
+
+PENGATURAN TATA LETAK
+- Header dan Logo: judul blog atau gambar yang Anda unggah.
+- Menu Utama: ubah nama, URL, dan urutan melalui Daftar Link Blogger.
+- Artikel Beranda — label | jumlah: recent|7 untuk tujuh artikel terbaru.
+  Contoh Bisnis|7 memilih label Bisnis. Nilai kosong memakai recent|7.
+- Headline memakai artikel pertama sebagai kartu besar dan dua berikutnya di kanan.
+  Jumlah artikel minimal tiga diperlukan untuk susunan lengkap tersebut.
+- Artikel terbaru dan artikel terkait memakai postingan Blogger asli.
+- Banner Pengumuman dan Ajakan dan Foto Beranda kosong secara bawaan.
+  Keduanya opsional; isi HTML melalui gadget bila diperlukan.
+- Newsletter belum terhubung ke penyedia. Selama belum diatur, form menyediakan RSS.
+  Pengaturan Newsletter dapat menerima newsletter_url dan newsletter_field.
+  Integrasi ini untuk formulir yang menerima parameter email melalui GET.
+- Profil Footer dan Kredit Footer menerima HTML kustom melalui gadget masing-masing.
+- Menu Footer dan Legal memakai Daftar Link native Blogger yang dapat diedit.
+- Footer ringkas berwarna gelap tampil pada semua halaman.
+- Komentar mengikuti pengaturan komentar Blogger; tidak ada komentar contoh.
+
+ARTIKEL DAN NAVIGASI
+- Gunakan gambar utama dan label pada postingan.
+- Gambar headline diprioritaskan, gambar lain dimuat bertahap.
+- /search?q=kata membuka pencarian native Blogger.
+- /search?view=index membuka indeks dengan filter tanggal dan label.
+- /?page=2 membuka halaman kedua beranda.
+- Buat halaman Tentang, Kontak dan Privasi dengan URL yang cocok, atau ubah tautan.
+- Tombol berbagi menyediakan WhatsApp, Facebook, X, Telegram, LinkedIn dan Salin tautan.
+
+Tema gratis tanpa aktivasi domain atau purchase key.
+Periksa LICENSE dan THIRD-PARTY-NOTICES.txt sebelum membagikan ulang.
